@@ -1,22 +1,63 @@
-(https://docs.helm.sh/developing_charts/#the-chart-repository-guide)
+Test project:
+https://github.com/IdeaUJetBrains/Helm_features/
+Spec: https://docs.helm.sh/developing_charts/#the-chart-repository-guide
 
-1.
-create a folder with packaged charts
-helm package mychart
+========================================================================================
+A chart repository consists of packaged charts and a special file called index.yaml
+========================================================================================
 
-2. Index local repositories, run in this folder:
-helm repo index "C:\Users\Olga Pavlova\IdeaProjects\ALL_K8TS_PROJECTS\Helm_features\helm\test\requirements_sub_charts"
+1. Create packaged charts:
+-package some charts:
+    helm package child1child
+    helm package child2
+-index these packaged charts (build index.yaml file with the list of all charts:):
+    helm repo index "C:\Users\Olga Pavlova\IdeaProjects\ALL_K8TS_PROJECTS\Helm_features\docs"
 
-3. push all this into the repository
+//----later----------------//
+helm package child1
+helm package parent_chart
+//------------------------//
 
-4. add this repo into the list of repos on minikube
-helm repo add
 
-5. go to the chart and run
-helm dependency update
+2. Create repo
+(https://github.com/kubernetes/helm/blob/master/docs/charts.md
+https://docs.helm.sh/developing_charts/#quickstart)
 
-View all your repositories:
+-create  docs/ folder in the root of the project
+-move packaged charts and index file into docs/ folder
+-push it to github
+-go to github->Settings of this project->
+go to GitHubPages on this page ->choose this "docs" in the combobox
+
+
+3. Add this repo into locally available helm repos:
+    helm repo add Helm_features https://ideaujetbrains.github.io/Helm_features/
+
+So, i have repo here: https://ideaujetbrains.github.io/Helm_features/
+
+============================================
+
+4. Add into the repo the parent of child1child
+
+-to download charts from requirement.yaml from the repo: go to the folder where is our "child1" chart and run:
+   helm dependency update child1
+   Result: appears  charts/ sub-folder with the packaged "child1child" chart
+-package it:  helm package child1
+-move this file into /docs
+-update index: helm repo index "C:\Users\Olga Pavlova\IdeaProjects\ALL_K8TS_PROJECTS\Helm_features\docs"
+-push files: the packaged chart (child1-2.tgz) and the new index.yaml
+
+Now do the same with "parent_chart":
+-helm dependency update parent_chart
+-helm package parent_chart
+-move
+-update index: helm repo index "C:\Users\Olga Pavlova\IdeaProjects\ALL_K8TS_PROJECTS\Helm_features\docs"
+-push
+
+//=========================================================================================//
+
+To view available repos:
 helm repo list
 
-Add chart from any other repository into the local repository:
-helm repo add child1child http://127.0.0.1:8879/charts
+To view repo charts:
+helm repo search https://ideaujetbrains.github.io/Helm_features/

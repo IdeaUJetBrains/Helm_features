@@ -1,11 +1,11 @@
 dependencies:
-- name: child1_level1
-  version: 1.x.x
-  repository: http://127.0.0.1:8879/charts
+- name: child1
+  version: x
+  repository: https://ideaujetbrains.github.io/Helm_features/
   import-values:
   - data
-- name: child2_level1
-  version: 1.x.x
-  repository: http://127.0.0.1:8879/charts
+- name: child2
+  version: x
+  repository: https://ideaujetbrains.github.io/Helm_features/
   import-values:
   - data

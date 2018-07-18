@@ -1,8 +1,0 @@
-dependencies:
-- name: old-hare
-  version: 1.x.x
-  repository: http://127.0.0.1:8879/charts
-  import-values:
-  - data
-  - child: default.data
-    parent: myimports

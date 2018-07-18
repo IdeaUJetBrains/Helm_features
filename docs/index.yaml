@@ -1,8 +1,23 @@
 apiVersion: v1
 entries:
+  child1:
+  - appVersion: v1
+    created: 2018-07-18T17:47:05.28115+02:00
+    description: my service
+    digest: 79d69d260e6ea52d9b78c3fb97c5f2cd4e21ae6af2adb5ff12c371a906fcfc15
+    keywords:
+    - my
+    - docker
+    maintainers:
+    - email: Olga.Pavlova@jetbrains.com
+      name: opavlova
+    name: child1
+    urls:
+    - child1-2.tgz
+    version: "2"
   child1child:
   - appVersion: v1
-    created: 2018-07-18T17:13:37.0846662+02:00
+    created: 2018-07-18T17:47:05.2821502+02:00
     description: my service
     digest: d5bbd4d9fdabbe065c2adb4717d1180692c1069979fa15fffa62908d96892f7f
     keywords:
@@ -17,7 +32,7 @@ entries:
     version: "2"
   child2:
   - appVersion: v1
-    created: 2018-07-18T17:13:37.0856669+02:00
+    created: 2018-07-18T17:47:05.2841531+02:00
     description: my service
     digest: 61e3f09b5bc9df60807e6e664aac3953665dd7167cd5e9136982a6a4cbb242ad
     keywords:
@@ -30,4 +45,4 @@ entries:
     urls:
     - child2-2.tgz
     version: "2"
-generated: 2018-07-18T17:13:37.0836676+02:00
+generated: 2018-07-18T17:47:05.2801534+02:00

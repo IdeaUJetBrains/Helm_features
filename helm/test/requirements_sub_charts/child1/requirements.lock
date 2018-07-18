@@ -1,0 +1,6 @@
+dependencies:
+- name: child1child
+  repository: https://ideaujetbrains.github.io/Helm_features/
+  version: "2"
+digest: sha256:1b59930f3ab539f622c43a42dde30c6186bf859637487f9329d8c5a5bee40874
+generated: 2018-07-18T17:38:53.5391698+02:00

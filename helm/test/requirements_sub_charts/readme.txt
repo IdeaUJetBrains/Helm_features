@@ -60,4 +60,4 @@ To view available repos:
 helm repo list
 
 To view repo charts:
-helm repo search https://ideaujetbrains.github.io/Helm_features/
+helm search

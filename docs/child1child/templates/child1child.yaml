@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: child1child
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+
+  {{/*  OK  */}}
+    test5: {{.Values.common_key1 }}
+    test6: {{.Values.common_key2.common_key2_1 }}
+    test7: {{.Values.common_key_different_values}}
+
+
+  {{/*  OK  */}}
+    test22: {{.Values.common_key_different_values }}
+    test23: {{.Values.common_key1 }}
+    test24: {{.Values.common_key2.common_key2_1 }}
+    test25: {{.Values.child_level2_chart1_test1.test1_2.test1_2_1 }}
+    test26: {{.Values.child_level2_chart1_test1.test1_2.test1_2_2 }}
+
+    test28: {{.Values.child_level2_chart1_test1.test1_1.test1_1_1.test1_1_1_1 }}
+
+data:
+  myvalue: "my data from myvalue key"

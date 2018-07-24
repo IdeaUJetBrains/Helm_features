@@ -1,0 +1,11 @@
+name: parent_chart
+version: 2
+appVersion: v1
+description: my service parent
+keywords:
+ - my
+ - docker
+maintainers:
+ - name: opavlova
+   email: Olga.Pavlova@jetbrains.com
+

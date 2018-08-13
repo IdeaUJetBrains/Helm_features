@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: test_name
+  labels:
+    {{ if (.Values.favorite.drink) and eq .Values.favorite.drink "coffee" }}mug: {{.Values.favorite.food}}{{ end }}
+    {{ if (.Values.favorite.drink) and eq .Values.favorite.drink "coffee" }}mug1: {{.Values.global.global_key2}}{{ end }}
+    test1: test
+spec:
+  template:
+    metadata:
+      labels:
+        {{ if (.Values.favorite.drink) and eq .Values.favorite.drink "coffee" }}mug: {{.Values.favorite.food}}{{ end }}
+        {{ if (.Values.favorite.drink) and eq .Values.favorite.drink "coffee" }}mug1: {{.Values.global.global_key2}}{{ end }}
+        test1: test
+  selector:
+    matchLabels:
+      {{ if (.Values.favorite.drink) and eq .Values.favorite.drink "coffee" }}mug: {{.Values.favorite.food}}{{ end }}
+      {{ if (.Values.favorite.drink) and eq .Values.favorite.drink "coffee" }}mug1: {{.Values.global.global_key2}}{{ end }}

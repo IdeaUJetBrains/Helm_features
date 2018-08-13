@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  toppings2: |-
+  {{- range $index, $topping := .Values.pizzaToppings }}
+  {{ $index }}: {{ $topping }}
+  {{- end }}
+
+  toppings3: |-
+  {{- range $index, $topping := .Values.pizzaToppings }}
+  {{ $index }}: {{ $topping }}
+  {{- end }}
+

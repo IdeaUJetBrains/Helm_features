@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: test_name
+spec:
+  selector:
+    matchLabels:
+      {{- $relname := .Release.Name -}}
+      {{- with .Values.favorite }}
+      release1: {{ $relname }}
+      {{- end }}

@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: {{ .Release.Name }}-configmap
+data:
+    myvalue: "Hello World"
+
+    food1: {{ .Values.favorite.food | upper | quote }}
+    {{- if eq .Values.favorite.drink "coffee" -}}
+    {{indent 2 "mug:true"}}
+    {{/*mug:true  - can write*/}}
+    {{- end -}}
+
+    {{- with .Values.favorite }}
+    drink2: {{ .drink | default "tea" | quote | abbrev  }}
+    food2: {{ .food | upper | quote }}
+    {{- end }}
+
+    toppings: |-
+    {{- range .Values.pizzaToppings }}
+    - {{ . | title | quote }}
+    {{- end }}
+
+
+    sizes: |-
+    {{- range tuple "small" "medium" "large" }}
+    - {{ . }}
+    {{- end }}
+
+
+    {{- $relname := .Release.Name -}}
+    {{- with .Values.favorite }}        release: {{ $relname }}    {{- end }}
+
+    toppings2: |-
+    {{- range $index, $topping := .Values.pizzaToppings }}
+    {{ $index }}: {{ $topping }}
+    {{- end }}
+
+{{/*incorrect: */}}
+    {{/*sizes1: |-*/}}
+    {{/*{{- range tuple "small1" "medium1" "large1" }}*/}}
+    {{/*- {{ .small1 }}*/}}
+    {{/*{{- end }}*/}}
+
+{{/*incorrect: */}}
+    {{/*toppings1: |-*/}}
+    {{/*{{- range .Values.pizzaToppings }}*/}}
+    {{/*- {{ .mushrooms | title | quote }}*/}}
+    {{/*{{- end }}*/}}

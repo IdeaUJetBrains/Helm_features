@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-parent3
+  labels:
+    test_temp2: {{ template "child.tpl2" . }}
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+

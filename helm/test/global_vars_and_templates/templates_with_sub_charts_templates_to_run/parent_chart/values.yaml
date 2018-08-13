@@ -1,0 +1,3 @@
+global:
+  global_key1: parent_true_value
+  global_key2: parent_global_key2_value

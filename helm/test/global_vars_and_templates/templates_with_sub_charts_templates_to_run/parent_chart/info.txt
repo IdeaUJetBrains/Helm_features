@@ -1,0 +1,108 @@
+All templates/values are ok taken from child/parents, no empty values
+
+
+Result of the run: helm install parent_chart --debug --dry-run
+
+===========================================================================================
+
+USER-SUPPLIED VALUES:
+{}
+
+COMPUTED VALUES:
+child_chart:
+  global:
+    global_key1: parent_true_value
+    global_key2: parent_global_key2_value
+global:
+  global_key1: parent_true_value
+  global_key2: parent_global_key2_value
+
+HOOKS:
+MANIFEST:
+
+---
+# Source: parent_chart/charts/child_chart/templates/ch_test1_with_include_child.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-child1
+
+  labels:
+    test4: parent_true_value
+    test5: parent_true_value
+    test6: child_test6_value
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+---
+# Source: parent_chart/charts/child_chart/templates/ch_test2_with_include_parent.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-child2
+
+  labels:
+    test1: parent_true_value
+
+    test2: parent_true_value
+    test3: parent_test3_value
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+---
+# Source: parent_chart/charts/child_chart/templates/ch_test3_with_template.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-child3
+  labels:
+    test_temp1: parent_global_key2_value
+    test_temp2: parent_global_key2_value
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+---
+# Source: parent_chart/templates/p_test1_with_include_child.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-parent1
+  labels:
+    test4: parent_true_value
+    test5: parent_true_value
+    test6: child_test6_value
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+---
+# Source: parent_chart/templates/p_test2_with_include_parent.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-parent2
+  labels:
+    test1: parent_true_value
+
+    test2: parent_true_value
+    test3: parent_test3_value
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+---
+# Source: parent_chart/templates/p_test3_with_template.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-parent3
+  labels:
+    test_temp1: parent_global_key2_value
+    test_temp2: parent_global_key2_value
+type: test
+
+data:
+  myvalue: "my data from myvalue key"

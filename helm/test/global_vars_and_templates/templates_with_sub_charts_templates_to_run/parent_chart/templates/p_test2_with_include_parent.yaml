@@ -1,0 +1,12 @@
+{{- define "parent.yaml.tpl" -}}
+{{- default .Chart.Name .Values.global.global_key1 -}}
+{{- end -}}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-parent2
+  labels: {{ include "parent.tpl2" . | indent 4 }}
+type: test
+
+data:
+  myvalue: "my data from myvalue key"

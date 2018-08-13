@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my_config_map_name_parent
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+
+#  {{/*"global" should be 3:*/}}
+    global_common_key: global_common_key_value
+    global_common_key_different: global_common_key_different_parent1_value
+    global_parent1_key: global_parent1_key_value
+
+    test1: {{.Values.global.global_parent1_key}}
+    test2: {{.Values.global.global_common_key}}
+    test3: {{.Values.global.global_common_key_different}}
+
+
+    {{/*wrong*/}}
+    test4: {{.Values.global.global_child1_level1_chart2_key}}
+    test5: {{.Values.global.global_child1_level1_chart1_key}}
+    test6: {{.Values.global.global_child_level2_chart1_key}}
+    heritage: ddd
+
+data:
+  myvalue: "my data from myvalue key"

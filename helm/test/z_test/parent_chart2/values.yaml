@@ -1,0 +1,15 @@
+test1:
+  test1_1:
+    test1_1_1: test1_1_1
+  test1_2:
+    test1_2_1: test1_2_1
+test2:
+  test2_1: test2_value
+  test2_2:
+    test2_2_1: test2.2.1_value
+    test2_2_2: test2.2.2_value
+test3: test3_value
+boolean_value: true
+integer_nvalue: 12345
+compose_value: compose_value_1part compose_value_2part
+string_value: "string_value"

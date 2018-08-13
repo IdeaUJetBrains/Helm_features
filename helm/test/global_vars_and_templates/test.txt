@@ -1,0 +1,5 @@
+helm install chart_share_templates_simple_to_run --debug --dry-run
+
+
+helm install parent_chart --debug --dry-run
+helm install check_variables_with_range_in_templates --debug --dry-run

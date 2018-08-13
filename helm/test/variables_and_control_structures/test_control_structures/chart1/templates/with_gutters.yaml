@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: test_name
+  labels:
+    test0: test0
+    {{- with .Values.favorite }}
+    test1: {{.food}}
+    test2: test2_value
+    test3: {{$.Values.pizzaToppings | quote}}
+    test4: {{$.Values.pizzaToppings | quote}}
+    {{- end }}
+spec:
+  template:
+    metadata:
+      labels:
+        test0: test0
+        {{- with .Values.favorite }}
+        test1: {{.food}}
+        test2: test2_value
+        test3: {{$.Values.pizzaToppings | quote}}
+        test4: {{$.Values.pizzaToppings | quote}}
+        test5: {{$.Values.pizzaToppings | quote}}
+        {{- end }}
+  selector:
+    matchLabels:
+        test0: test0
+        {{- with .Values.favorite }}
+        test1: {{.food}}
+        test2: test2_value
+        test3: {{$.Values.pizzaToppings | quote}}
+        test4: {{$.Values.pizzaToppings | quote}}
+        {{- end }}

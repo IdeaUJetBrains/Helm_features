@@ -1,9 +1,15 @@
+========================================================================================
+
+Here you find the example: HOW TO CREATE A CHART REPOSITORY AND USE IT
+
+A chart repository consists of packaged charts and a special file called index.yaml
+
+========================================================================================
+
 Test project:
 https://github.com/IdeaUJetBrains/Helm_features/
 Spec: https://docs.helm.sh/developing_charts/#the-chart-repository-guide
 
-========================================================================================
-A chart repository consists of packaged charts and a special file called index.yaml
 ========================================================================================
 
 1. Create packaged charts:

@@ -1,0 +1,4 @@
+helm install chart1 --debug --dry-run
+
+
+

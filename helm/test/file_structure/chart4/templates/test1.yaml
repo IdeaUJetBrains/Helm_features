@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  myvalue: "Hello World"
+
+  test1: {{.Values.favorite.food}}
+  test2: {{.Values.global.global_key2 "name"}}
+
+#{{/*it is now a helm template file!*/}}
+
+#it is not helm now. It a simple k8s file
+

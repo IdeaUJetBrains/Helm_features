@@ -1,0 +1,5 @@
+global:
+  global_chart2: true
+  global_common_key_different: global_common_key_different_chart2_value
+
+test: value

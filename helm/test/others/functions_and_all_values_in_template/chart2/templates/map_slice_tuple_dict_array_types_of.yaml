@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  {{/*tuple is a list-like collection of fixed size, but with arbitrary data types*/}}
+  sizes: |-
+    {{- range tuple "small" "medium" "large" }}
+    - {{ . }}
+    {{- end }}
+
+  {{/*slice -  a list of pizzaToppings*/}}
+  sizes1: |-
+  {{- range .Values.pizzaToppings }}
+  - {{ . | title | quote }}
+  {{- end }}
+
+  {{/*range can be used to iterate over collections that have a key and a value (like a map or dict).*/}}

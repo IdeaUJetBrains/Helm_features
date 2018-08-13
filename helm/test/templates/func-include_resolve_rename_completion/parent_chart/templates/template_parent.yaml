@@ -1,0 +1,57 @@
+{{- define "parent_y" }}
+  test_y_p1: test_p1_value
+  test_y_p2: test_p2_value
+  chart: {{ .Chart.Name }}
+  version: {{ .Chart.Version }}
+{{- end }}
+{{- define "parent_y.with_parent" }}
+  test_y_p_t1: {{ include "parent1" . }}
+{{- end }}
+{{- define "parent_y.with_child" }}
+  test_y_p_t2: {{ include "child1" . }}
+{{- end }}
+{{- define "parent_y.with_sub_child" }}
+  test_y_p_t3: {{ include "sub_child1" . }}
+{{- end }}
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-parent
+  labels:
+    {{- template "parent_y" }}
+    test1: {{ include "parent1" . }}
+    test2: {{ include "parent2" . }}
+
+    test6: {{ include "child1" . }}
+    test7: {{ include "child2" . }}
+
+    test11: {{ include "sub_child1" . }}
+    test12: {{ include "sub_child2" . }}
+
+    {{ include "parent_h_from_yaml.parent" . }}
+    {{ include "parent_h_from_yaml.child" . }}
+    {{ include "parent_h_from_yaml.sub_child" . }}
+    {{ include "parent_y" . }}
+    {{ include "parent_y.with_parent" . }}
+    {{ include "parent_y.with_child" . }}
+    {{ include "parent_y.with_sub_child" . }}
+    {{ include "child_h_from_yaml.parent" . }}
+    {{ include "child_h_from_yaml.child" . }}
+    {{ include "child_h_from_yaml.sub_child" . }}
+    {{ include "child_y" . }}
+    {{ include "child_y_with_parent" . }}
+    {{ include "child_y_with_child" . }}
+    {{ include "child_y_with_sub_child" . }}
+    {{ include "sub_child_h_from_yaml.parent" . }}
+    {{ include "sub_child_h_from_yaml.child" . }}
+    {{ include "sub_child_h_from_yaml.sub_child" . }}
+    {{ include "sub_child_y" . }}
+    {{ include "sub_child_y_with_parent" . }}
+    {{ include "sub_child_y_with_child" . }}
+    {{ include "sub_child_y_with_sub_child" . }}
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+

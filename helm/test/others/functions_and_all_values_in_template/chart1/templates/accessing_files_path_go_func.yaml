@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: conf
+data:
+{{ (.Files.Glob "foo/*").AsConfig | indent 2 }}
+{{ .Files.Glob.base }}
+{{ .Files.Glob.dir }}
+{{ .Files.Glob.ext }}
+{{ .Files.Glob.isAbs }}
+{{ .Files.Glob.clean }}
+

@@ -1,0 +1,22 @@
+{{- define "common.annote" -}}
+{{- range $k, $v := . }}
+{{ $k | quote }}: {{ $v | quote }}
+{{- end -}}
+{{- end -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+spec:
+  rules:
+  - host: {{ $host }}
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: {{ include "common.name" $.Values.test }}
+          servicePort: {{ include "common.port" . }}
+metadata:
+  annotations:
+    {{ include "common.annote" .Values.test | indent 4 }}
+    {{ include "common.annote" $.Values.test | indent 4 }}
+
+

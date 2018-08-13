@@ -1,0 +1,33 @@
+{{- define "some.template1" -}}
+{{- template "some.template1" . }}
+{{- end -}}
+{{- define "some.template2" -}}
+{{ .Chart.Name }}
+{{- end -}}
+{{- define "some.template2" -}}
+{{ .Chart.Name }}
+{{- end -}}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-chart2
+  labels:
+    test0_1: {{- template "1_--=1+_)(*&^%$#@!~`,.<>/?@#$%^&*(()_+=ZAsxQWqw{}[]" . }}
+    test0_2: {{- template "12345" . }}
+    test0_3: {{- template "1 2 3 4" . }}
+    test0_4: {{- template "long_name.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test.test111" . }}
+    test0_5: {{- template "some.template.with.several.args" . }}
+    test0_6: {{template "some.template1" . }}
+{{ include "test_tpl_1" . | indent 4 }}
+{{ include "test_tpl_2" . | indent 4 }}
+{{ include "test_tpl_3" . | indent 4 }}
+{{ include "test_tpl_4" . | indent 4 }}
+{{ include "test_tpl_5" . | indent 4 }}
+{{ include "test_tpl_6" . | indent 4 }}
+{{ include "test_tpl_7" . | indent 4 }}
+{{/*{{ include "" . | indent 4 }}*/}}
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+

@@ -1,0 +1,14 @@
+{{- define "sub-folder.tpl" }}
+  test6: {{ template "some.template"  . }}
+{{- end }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  myvalue: "Hello World"
+
+  test11: {{.Values.favorite.food}}
+  test12: {{.Values.global.global_key2 "name"}}
+
+

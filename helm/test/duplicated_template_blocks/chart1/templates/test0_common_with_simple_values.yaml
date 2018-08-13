@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: test
+    name: test
+data:
+    myvalue: "Hello World"
+
+    {{/*wrong remove*/}}
+    {{- if true -}}
+    test_food1: true1
+    {{- end -}}
+    {{/*ok remove*/}}
+    {{- if true -}}
+    test_food1: true2
+    {{- end -}}
+
+    {{/*===================================================*/}}
+    {{/*drink2 - wrong remove, food2 - ok remove*/}}
+    {{- with .Values.favorite }}
+    drink2: "tea1"
+    food2: test_food2_1
+    {{- end }}
+    {{/*drink2 - wrong remove, food2 - ok remove*/}}
+    {{- with .Values.favorite }}
+    drink2: "tea2"
+    food2: test_food2_2
+    {{- end }}
+
+    {{/*===================================================*/}}
+    {{/*ok, but removed with the comment line*/}}
+    toppings: |-
+    {{- range .Values.pizzaToppings }}
+    -
+    {{- end }}
+
+    toppings: |-
+    {{- range .Values.pizzaToppings }}
+    -
+    {{- end }}
+    {{/*===================================================*/}}
+    {{/*ok remove*/}}
+    sizes: |-
+      {{- range tuple "small1" "medium1" "large1" }}
+      - {{ . }}
+      {{- end }}
+
+    {{/*wrong remove*/}}
+    sizes: |-
+    {{- range tuple "small2" "medium2" "large2" }}
+    - {{ . }}
+    {{- end }}
+
+    {{/*===================================================*/}}
+    {{/*wrong remove*/}}
+    {{- $relname1 := .Release.Name -}}
+    {{- with .Values.favorite }}
+    release: {{ $relname1 }}
+    {{- end }}
+    {{/*wrong remove*/}}
+    {{- $relname2 := .Release.Name -}}
+    {{- with .Values.favorite }}
+    release: {{ $relname2 }}
+    {{- end }}
+

@@ -1,0 +1,28 @@
+{{- define "chartmuseum.name"}}
+{{- $global := default (dict) .Values.global -}}
+{{- $base := default .Chart.Name .Values.nameOverride -}}
+{{- $gpre := default "" $global.namePrefix -}}
+{{- $pre := default "" .Values.namePrefix -}}
+{{- $suf := default "" .Values.nameSuffix -}}
+{{- $gsuf := default "" $global.nameSuffix -}}
+{{- $name := print $gpre $pre $base $suf $gsuf -}}
+{{- $name | lower | trunc 54 | trimSuffix "-" -}}
+{{- end -}}
+
+{{- define "common.fullname"}}
+  {{- $global := default (dict) .Values.global -}}
+  {{- $base := default (printf "%s-%s" .Release.Name .Chart.Name) .Values.fullnameOverride -}}
+  {{- $gpre := default "" $global.fullnamePrefix -}}
+  {{- $pre := default "" .Values.fullnamePrefix -}}
+  {{- $suf := default "" .Values.fullnameSuffix -}}
+  {{- $gsuf := default "" $global.fullnameSuffix -}}
+  {{- $name := print $gpre $pre $base $suf $gsuf -}}
+  {{- $name | lower | trunc 54 | trimSuffix "-" -}}
+{{- end -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: {{ .Release.Name }}-configmap
+data:
+    myvalue: "Hello World"
+

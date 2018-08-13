@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: test_name
+  labels:
+    test: {{- range tuple "small"}}
+    {{ . }}
+    {{- end }}
+spec:
+  template:
+    metadata:
+        labels:
+           test: {{- range tuple "small"}}
+           {{ . }}
+           {{- end }}
+  selector:
+     matchLabels:
+        test: {{- range tuple "small"}}
+        {{ . }}
+        {{- end }}
+        {{- range $key, $value := .Values.favorite }}
+        {{ $key }}: {{ $value | quote }}
+        {{- end }}

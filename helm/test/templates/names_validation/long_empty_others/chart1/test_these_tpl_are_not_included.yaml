@@ -1,0 +1,20 @@
+{{- define "some.template1" -}}
+{{- template "some.template1" . }}
+{{- end -}}
+{{- define "some.template5" -}}
+{{ .Chart.Name }}
+{{- end -}}
+{{- define "some.template6" -}}
+{{ .Chart.Name }}
+{{- end -}}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-chart2
+  labels:
+    test: test
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+

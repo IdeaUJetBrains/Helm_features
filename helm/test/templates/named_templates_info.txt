@@ -1,0 +1,7 @@
+Defined templates (templates created inside a {{ define }} directive) are globally accessible.
+That means that a chart and all of its subcharts
+will have access to all of the templates created with {{ define }}.
+
+
+https://docs.helm.sh/chart_template_guide/#the-chart-template-developer-s-guide
+https://github.com/helm/helm/blob/master/docs/chart_best_practices/templates.md

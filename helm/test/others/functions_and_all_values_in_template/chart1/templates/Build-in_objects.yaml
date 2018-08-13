@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ .Release.Name }}-secret
+type: Opaque
+data:
+  test1: {{.Release.Name}}
+  test2: {{.Release.Time}}
+  test3: {{.Release.Namespace}}
+  test4: {{.Release.Service}}
+  test5: {{.Release.Revision}}
+  test6: {{.Release.IsUpgrade}}
+  test7: {{.Release.IsInstall}}
+{{/*==========================================================================================================*/}}
+  test11: {{.Chart.Name}}
+  test12: {{.Chart.ApiVersion}}
+  test13: {{.Chart.Version}}
+  test14: {{.Chart.KubeVersion}}
+  test15: {{.Chart.Description}}
+  test16: {{.Chart.Keywords}}
+  test17: {{.Chart.Home}}
+  test18: {{.Chart.Sources}}
+  test19: {{.Chart.Maintainers}}
+  test20: {{.Chart.Engine}}
+  test21: {{.Chart.Icon}}
+  test22: {{.Chart.AppVersion}}
+  test23: {{.Chart.Deprecated}}
+  test24: {{.Chart.TillerVersion}}
+{{/*==========================================================================================================*/}}
+  test30: {{.Files.Get}}
+  test31: {{.Files.GetBytes}}
+  test32: {{.Files.Lines "foo/bar.txt" }}
+  test33: {{.Files.Glob}}
+  test34: {{(.Files.Glob "bar/*").AsSecrets }}
+  test35: {{(.Files.Glob "bar/*").AsConfig }}
+{{/*============================================================================================================*/}}
+  test40: {{.Capabilities.APIVersions}}
+  test41: {{.Capabilities.APIVersions.Has $version}}
+
+  test42: {{.Capabilities.KubeVersion}}
+  {{/*Can be: Major, Minor, GitVersion, GitCommit, GitTreeState, BuildDate, GoVersion, Compiler, and Platform.*/}}
+
+  test43: {{.Capabilities.TillerVersion }}
+  {{/*SemVer, GitCommit, and GitTreeState.*/}}
+  {{/*==========================================================================================================*/}}
+  test50: {{.Template.Name}}
+  test51: {{.Template.BasePath}}
+  {{/*==========================================================================================================*/}}
+  test60: {{.Values.global}}

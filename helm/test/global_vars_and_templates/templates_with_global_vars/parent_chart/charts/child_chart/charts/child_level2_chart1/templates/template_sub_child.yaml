@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-sub-child
+  labels:
+    test1: {{ template "parent1" . }}
+    test2: {{ template "parent2" . }}
+    test3: {{ template "parent3" . }}
+    test4: {{ template "parent4" . }}
+    test5: {{ template "parent5" . }}
+
+    test6: {{ template "child1" . }}
+    test7: {{ template "child2" . }}
+    test8: {{ template "child3" . }}
+    test9: {{ template "child4" . }}
+    test10: {{ template "child5" . }}
+
+    test11: {{ template "sub.child1" . }}
+    test12: {{ template "sub.child2" . }}
+    test13: {{ template "sub.child3" . }}
+    test14: {{ template "sub.child4" . }}
+    test15: {{ template "sub.child5_changed" . }}
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+

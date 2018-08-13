@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: template-parent1
+  labels:
+    test2: test2_value
+
+data:
+  myvalue: "my data from myvalue key"

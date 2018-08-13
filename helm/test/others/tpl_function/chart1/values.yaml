@@ -1,0 +1,15 @@
+affinity: |
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+    - weight: 1
+      podAffinityTerm:
+        topologyKey: kubernetes.io/hostname
+        labelSelector:
+          matchExpressions:
+          - key: component
+            operator: In
+            values:
+            - "{{ .Release.Name }}-{{ .Values.Component }}"
+keycloak:
+  extraInitContainers: |
+

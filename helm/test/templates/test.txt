@@ -1,0 +1,5 @@
+helm install chart1 --debug --dry-run
+
+
+helm install gocd --debug --dry-run
+

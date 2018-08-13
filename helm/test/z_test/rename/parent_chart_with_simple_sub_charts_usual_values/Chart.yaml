@@ -1,0 +1,11 @@
+name: parent_chart_with_simple_sub_charts_usual_values
+version: 2
+appVersion: v1
+description: my service
+keywords:
+ - my
+ - docker
+maintainers:
+ - name: opavlova
+   email: Olga.Pavlova@jetbrains.com
+

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my_config_map_name
+spec:
+  containers:
+    - name: test
+      env:
+        - name: env_name
+          value: {{ .Chart.Name }}

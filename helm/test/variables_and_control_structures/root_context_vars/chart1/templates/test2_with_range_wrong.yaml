@@ -1,0 +1,15 @@
+{{- range .Values.tlsSecrets }}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ .name }}
+  labels:
+    test3: {{ .Values.favorite.food}}
+type: kubernetes.io/tls
+data:
+    tls.crt: {{ .certificate }}
+    tls.key: {{ .key }}
+    test3: {{ .Values.favorite.food}}
+{{- end }}
+---

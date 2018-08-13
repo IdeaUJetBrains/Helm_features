@@ -1,0 +1,18 @@
+global:
+  global_child_level2_chart1_key: child_level2_chart1_key_value
+  global_common_key: global_common_key_value
+  global_common_key_different: global_common_key_different_child_level2_chart1_value
+child_level2_chart1_test1:
+  test1_1:
+    test1_1_1: parent1_test1_1_1
+      test1_1_1_1: parent1_test1_1_1_1
+  test1_2:
+    test1_2_1: parent1_test1_2_1
+    test1_2_2: parent1_test1_2_2
+
+common_key1: common_key1_value
+common_key2:
+  common_key2_1: common_key2_1_value
+
+common_key_different_values: common_key3_child_level2_chart1_value
+bla_bla: level2 bla-bla

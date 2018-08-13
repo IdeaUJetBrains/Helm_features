@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  myvalue: "Hello World"
+  sizes: |-
+  {{- range tuple "small" "medium" "large" }}
+    - {{ . }}
+  {{- end }}
+
+   

@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: "{{ template "consul.fullname" . }}"
+spec:
+  template:
+    metadata:
+      name: "{{ template "consul.fullname" . }}"
+    spec:
+      {{- if .Values.affinity }}
+      affinity:
+      {{ tpl .Values.affinity . | indent 8 }}
+      {{- end }}
+      {{ tpl .Values.keycloak.extraInitContainers . | indent 8 }}

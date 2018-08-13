@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my_config_map_name_parent
+  labels:
+    test1: {{.Values.child_level1_chart.common_key_different_values}}
+    test2: {{.Values.parent_test1}}
+data:
+  myvalue: "my data from myvalue key"

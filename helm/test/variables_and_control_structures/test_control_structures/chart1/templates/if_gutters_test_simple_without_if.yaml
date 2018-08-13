@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: test_name
+  labels:
+    test1: test
+spec:
+  template:
+    metadata:
+      labels:
+        test1: test
+        test1444: test
+  selector:
+    matchLabels:
+      test1: test
+  serviceName: yyy

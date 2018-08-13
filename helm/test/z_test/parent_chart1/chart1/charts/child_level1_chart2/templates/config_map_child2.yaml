@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my_config_map_name_child2
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    test1: {{.Values.child_level1_chart2_test1.test1_1.test1_1_1}}
+    test2: {{.Values.child_level1_chart2_boolean_value}}
+    test3: {{.Values.child_level1_chart2_integer_nvalue}}
+    test4: "{{.Values.child_level1_chart2_compose_value}}"
+    test5: {{.Values.child_level1_chart2_string_value}}
+    test6: {{.Values.global.child_level1_chart2_global_test1}}
+    test7: {{.Release.Name}}
+    test8: {{.Capabilities.KubeVersion}}
+    test9: {{.Capabilities.TillerVersion}}
+    test10: {{.Capabilities.APIVersions}}
+    test11: {{.Template.Name}}
+    test_common_key1: {{.Values.}}
+data:
+  myvalue: "my data from myvalue key"

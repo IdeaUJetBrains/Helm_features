@@ -1,0 +1,11 @@
+{{- if .Values.global.global_chart2 }}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-chart2
+  labels: {{ include "from_helpers.tpl3" . | indent 4 }}
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+{{- end }}

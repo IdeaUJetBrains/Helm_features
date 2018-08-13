@@ -1,0 +1,76 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: {{ .Release.Name }}-configmap
+    name: {{ .Release.Name }}-configmap
+data:
+    myvalue: "Hello World"
+
+    food1: {{ .Values.favorite.food | upper | quote }}
+    {{- if eq .Values.favorite.drink "coffee" -}}
+    {{indent 2 "mug:true"}}
+    {{/*mug:true  - can write*/}}
+    {{- end -}}
+
+    food1: {{ .Values.favorite.food | upper | quote }}
+    {{- if eq .Values.favorite.drink "coffee" -}}
+    {{indent 4 "mug:true"}}
+    {{- end -}}
+
+    {{/*===================================================*/}}
+
+    {{- with .Values.favorite }}
+    drink2: {{ .drink | default "tea1" | quote }}
+    food2: {{ .food | upper | quote }}
+    {{- end }}
+
+    {{- with .Values.favorite }}
+    drink2: {{ .drink | default "tea2" | quote }}
+    food2: {{ .food | upper | quote }}
+    {{- end }}
+
+    {{/*===================================================*/}}
+    toppings: |-
+    {{- range .Values.pizzaToppings }}
+    - {{ . | title | quote }}
+    {{- end }}
+
+    toppings: |-
+    {{- range .Values.pizzaToppings }}
+    - {{ . | quote }}
+    {{- end }}
+    {{/*===================================================*/}}
+
+    sizes: |-
+      {{- range tuple "small1" "medium1" "large1" }}
+      - {{ . }}
+      {{- end }}
+
+    sizes: |-
+    {{- range tuple "small2" "medium2" "large2" }}
+    - {{ . }}
+    {{- end }}
+
+    {{/*===================================================*/}}
+
+    {{- $relname1 := .Release.Name -}}
+    {{- with .Values.favorite }}
+    release: {{ $relname1 }}
+    {{- end }}
+
+    {{- $relname2 := .Release.Name -}}
+    {{- with .Values.favorite }}
+    release: {{ $relname2 }}
+    {{- end }}
+
+    {{/*===================================================*/}}
+
+    toppings2: |-
+    {{- range $index, $topping := .Values.pizzaToppings }}
+    {{ $index }}: {{ $topping }}
+    {{- end }}
+
+    toppings2: |-
+    {{- range $topping := .Values.pizzaToppings }}
+    {{ $topping }}
+    {{- end }}

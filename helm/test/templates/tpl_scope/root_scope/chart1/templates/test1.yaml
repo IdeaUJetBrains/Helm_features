@@ -1,0 +1,22 @@
+{{- define "y.tpl1" -}}
+{{ .Chart.Name }}
+{{- end -}}
+{{- define "some.tpl1" -}}
+{{ .Chart.Name }}
+{{- end -}}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-chart2
+  labels:
+    test1: {{ template "h.tpl1" $ }}
+    test2: {{ template "h.tpl2" . }}
+    {{/*wrong scope: install fails */}}
+    test3: {{ template "h.tpl3" $.Values }}
+    {{/*wrong scope: install ok, but test4 = empty*/}}
+    test4: {{ template "h.tpl3"  }}
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+

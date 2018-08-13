@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test
+data:
+  sizes: |-
+  {{- range tuple "small" "medium" "large" }}
+  - {{ . }}
+  {{- end }}
+
+
+

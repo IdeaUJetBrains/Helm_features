@@ -1,5 +1,6 @@
 {{- define "parent1" -}}
 {{- .Values.global.global_common_key_different -}}
+{{- .Chart.Name -}}
 {{- end -}}
 
 {{- define "parent2" -}}

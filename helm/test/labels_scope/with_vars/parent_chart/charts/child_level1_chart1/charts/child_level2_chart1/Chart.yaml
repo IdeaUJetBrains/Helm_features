@@ -1,4 +1,4 @@
-name: chart1
+name: child_level2_chart1
 version: 2
 appVersion: v1
 description: my service
@@ -8,5 +8,4 @@ keywords:
 maintainers:
  - name: opavlova
    email: Olga.Pavlova@jetbrains.com
-#{{- define "labels" }}from: mychart{{ end }}
 

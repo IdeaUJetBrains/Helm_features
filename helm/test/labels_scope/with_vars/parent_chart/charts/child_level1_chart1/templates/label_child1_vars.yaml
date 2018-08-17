@@ -1,16 +1,18 @@
+{{/*{{- $child_label_from_var := "from_helpers.vars.value.tpl1" }}*/}}
+{{- $value_from_var := "my_label_value" }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{.Chart.Name}}}
+  name: {{.Chart.Name}}
   labels:
-    app: 
+    var_label: {{ $value_from_var }}
 spec:
   replicas: 1
   template:
     metadata:
       name: Deployment_label_selectors
       labels:
-        app:
+        var_label: {{ $value_from_var }}
     spec:
       containers:
       - name: dep_name
@@ -19,11 +21,4 @@ spec:
       restartPolicy: Always
   selector:
     matchLabels:
-      app: app_label
-      app: app_label
-      app1: app_label
-      app2: app_label
-
-
-
-
+      var_label: {{ $value_from_var }}

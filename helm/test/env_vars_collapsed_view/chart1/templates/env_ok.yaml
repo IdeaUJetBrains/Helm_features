@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: test_name
+spec:
+  template:
+    spec:
+      containers:
+        - name: sss
+          env:
+            - name: {{.Values.favorite}}
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "from_helpers.tpl1-existing" . }}
+                  key: mysql-root-password
+            {{- range $name, $value := .Values.favorite }}
+            - name: {{ $name }}
+              value: {{ quote $value }}
+            {{- end }}
+            {{$provider :="aws"}}
+            {{- if eq $provider "aws" }}
+            - name: AWS_SHARED_CREDENTIALS_FILE
+            {{- else }}
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+            {{- end }}
+            - name: DATA_SOURCE_NAME
+              value: {{ .Values.global.global_key2 }}
+            - name: {{ . }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $provider }}
+                  key: {{ . | quote }}
+  serviceName: name
+  selector:
+    matchLabels:
+      test: test

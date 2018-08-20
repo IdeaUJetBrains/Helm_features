@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: test_name
+spec:
+  template:
+    spec:
+      containers:
+        - name: sss
+          env:
+            {{/*notOk:*/}}
+            - name: "ACCEPT_EULA"
+              value: "{{ .Values.global.global_key2 }}"
+            - name: DASK_SCHEDULER_ADDRESS
+              value: {{ template "from_helpers.tpl1-existing" . }}-scheduler:{{ .Values.global.global_key2 }}
+            {{/*- name: DASK_SCHEDULER_ADDRESS_Not-exiting*/}}
+              {{/*value: {{ template "from_helpers.tpl1_Not_exiting" . }}-scheduler:{{ .Values.global.global_key2_Not_exiting }}*/}}
+  serviceName: name

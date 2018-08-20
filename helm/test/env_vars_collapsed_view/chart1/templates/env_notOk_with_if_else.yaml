@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: test_name
+spec:
+  template:
+    spec:
+      containers:
+        - name: sss
+          env:
+            {{/*notOk*/}}
+          - name: DRONE_HOST
+            {{- if  .Values.global.global_key4   }}
+            value: "{{ .Values.global.global_key2 }}"
+            {{- else }}
+            value: "http://{{ template "from_helpers.tpl1-existing" . }}"
+            {{- end }}
+  serviceName: name
+  selector:
+    matchLabels:
+      test: test

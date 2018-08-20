@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: test_name
+spec:
+  template:
+    spec:
+      containers:
+        - name: sss
+          env:
+            {{/*notOk*/}}
+          - name: DEFAULT_JAVA_OPTS
+            value: '-Ddistribution.home={{ .Values.mountPath }} -Dfile.encoding=UTF8 -Dcom.sun.management.jmxremote.authenticate=false
+                  -Dcom.sun.management.jmxremote.ssl=false -Duser.timezone=UTC
+                  {{- if .Values.javaOpts.xms }}
+                  -Xms{{ .Values.javaOpts.xms }}
+                  {{- end}}
+                  {{- if .Values.javaOpts.xmx }}
+                  -Xmx{{ .Values.javaOpts.xmx }}
+                  {{- end}}
+                  -Dspring.profiles.active=production'
+  serviceName: name
+  selector:
+    matchLabels:
+      test: test

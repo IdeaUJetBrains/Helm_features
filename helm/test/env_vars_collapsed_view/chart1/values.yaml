@@ -1,0 +1,19 @@
+global:
+  global_key1-1: parent_true_value
+  global_key2: aws
+  global_key3: "template_name_value"
+  global_key4: "aws"
+
+favorite:
+  drink: coffee
+  food: pizza
+pizzaToppings:
+- mushrooms
+- cheese
+- peppers
+- onions
+
+mountPath: "/var/opt/jfrog/distributor"
+javaOpts:
+  xms:
+  xmx:

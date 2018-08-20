@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: test_name
+spec:
+  template:
+    spec:
+      containers:
+        - name: sss
+          env:
+            {{/*NotOk*/}}
+            - name: DASK_SCHEDULER_ADDRESS
+              value:  scheduler:{{ .Values.global.global_key2 }}
+            - name: DASK_SCHEDULER_ADDRESS1
+              value:  {{ .Values.global.global_key2 }}:scheduler
+            - name: DASK_SCHEDULER_ADDRESS2
+              value:  "scheduler:{{ .Values.global.global_key2 }}"
+            - name: DASK_SCHEDULER_ADDRESS3
+              value:  "{{ .Values.global.global_key2 }}"
+
+  serviceName: name
+  selector:
+    matchLabels:
+      test: test

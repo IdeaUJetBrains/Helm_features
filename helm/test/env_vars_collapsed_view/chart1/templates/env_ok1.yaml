@@ -1,3 +1,4 @@
+{{- $provider := .Values.global.global_key2 -}}
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -8,5 +9,5 @@ spec:
       containers:
         - name: sss
           env:
-            - name: {{.Values.favorite}}
+            {{ toYaml .Values.favorite | indent 10 }}
   serviceName: name

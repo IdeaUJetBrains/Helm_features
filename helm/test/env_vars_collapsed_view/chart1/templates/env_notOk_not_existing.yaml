@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: test_name
+spec:
+  template:
+    spec:
+      containers:
+        - name: sss
+          env:
+            {{/*notOk:*/}}
+            - name: DASK_SCHEDULER_ADDRESS_Not-exiting1
+              value: {{ template "from_helpers.tpl1_Not-exiting" . }}-scheduler:{{ .Values.global.global_key2_Not_exiting }}
+            {{/*OK:*/}}
+            - name: DASK_SCHEDULER_ADDRESS_Not-exiting2
+              value: {{ template "from_helpers.tpl1_Not-exiting" . }}
+            - name: DASK_SCHEDULER_ADDRESS_Not-exiting3
+              value: {{ .Values.global.global_key2_Not_exiting }}
+  serviceName: name

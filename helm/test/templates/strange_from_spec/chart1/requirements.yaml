@@ -1,4 +1,0 @@
-dependencies:
-- name: mychart
-  version: 1.0
-  repository: .

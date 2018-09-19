@@ -1,0 +1,24 @@
+{{- define "parent_y" }}
+    test_y_p1: test_p1_value
+    test_y_p2: test_p2_value
+    chart: {{ .Chart.Name }}
+    version: {{ .Chart.Version }}
+{{- end }}
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-parent
+  labels:
+    {{- template "parent_y" }}
+    test1: {{ template "parent1_h" . }}
+    test6: {{ template "child1_h" . }}
+    test11: {{ template "sub.child1_h" . }}
+    {{ template "child_y" . }}
+    {{ template "sub_child_y" . }}
+
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+

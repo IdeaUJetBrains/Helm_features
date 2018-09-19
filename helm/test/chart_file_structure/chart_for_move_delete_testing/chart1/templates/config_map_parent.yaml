@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my_config_map_name_parent
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    test1: {{.Values.global.global_parent1_key}}
+    test2: {{.Values.global.global_common_key}}
+    test3: {{.Values.global.global_common_key_different}}
+
+data:
+  myvalue: "my data from myvalue key"
+
+
+  {{/* Ok:  it is a helm template file */}}
+
+
+  {{/* Ok: not a helm template file */}}
+  {{/* Ok: not a chart any more*/}}

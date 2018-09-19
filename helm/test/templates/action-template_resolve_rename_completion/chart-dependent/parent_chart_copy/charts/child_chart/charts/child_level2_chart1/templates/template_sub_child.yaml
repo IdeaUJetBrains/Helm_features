@@ -1,0 +1,55 @@
+{{- define "sub_child_y" }}
+  test_y_sub_ch1: test_sub_ch_t1_value
+  test_y_sub_ch2: test_sub_ch_t2_value
+{{- end }}
+{{- define "sub_child_y_with_parent" }}
+  test_y_sub_ch_t1: {{ template "parent1" . }}
+{{- end }}
+{{- define "sub_child_y_with_child" }}
+  test_y_sub_ch_t2: {{ template "child1" . }}
+{{- end }}
+{{- define "sub_child_y_with_sub_child_renamed" }}
+  test_y_sub_ch_t3: {{ template "sub.child1" . }}
+{{- end }}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-sub-child
+  labels:
+    test1: {{ template "parent1" . }}
+    test2: {{ template "parent2" . }}
+
+
+    test6: {{ template "child1" . }}
+    test7: {{ template "child2" . }}
+
+
+    test11: {{ template "sub.child1" . }}
+    test12: {{ template "sub.child2" . }}
+
+    {{ template "parent_h_from_yaml.parent" . }}
+    {{ template "parent_h_from_yaml.child" . }}
+    {{ template "parent_h_from_yaml.sub_child" . }}
+    {{ template "parent_y" . }}
+    {{ template "parent_y.with_parent" . }}
+    {{ template "parent_y.with_child" . }}
+    {{ template "parent_y.with_sub_child" . }}
+    {{ template "child_h_from_yaml.parent" . }}
+    {{ template "child_h_from_yaml.child" . }}
+    {{ template "child_h_from_yaml.sub_child" . }}
+    {{ template "child_y" . }}
+    {{ template "child_y_with_parent" . }}
+    {{ template "child_y_with_child" . }}
+    {{ template "child_y_with_sub_child" . }}
+    {{ template "sub_child_h_from_yaml.parent" . }}
+    {{ template "sub_child_h_from_yaml.child" . }}
+    {{ template "sub_child_h_from_yaml.sub_child" . }}
+    {{ template "sub_child_y" . }}
+    {{ template "sub_child_y_with_parent" . }}
+    {{ template "sub_child_y_with_child" . }}
+    {{ template "sub_child_y_with_sub_child_renamed" . }}
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+

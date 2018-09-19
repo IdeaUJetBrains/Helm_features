@@ -1,0 +1,122 @@
+All templates/values are ok taken from child/parents, no empty values
+
+
+Result of the run:
+helm install parent_chart --debug --dry-run
+
+===========================================================================================
+Ok OUTPUT should be:
+===========================================================================================
+
+
+CHART: parent_chart-2
+USER-SUPPLIED VALUES:
+{}
+
+COMPUTED VALUES:
+child_chart:
+  child_level2_chart1:
+    global:
+      global_child_level2_chart1_key: child_level2_chart1_key_value
+      global_child1_level1_chart1_key: global_child_level1_chart1_key_value
+      global_common_key: global_common_key_value
+      global_common_key_different: global_common_key_different_parent1_value
+      global_parent1_key: global_parent1_key_value
+  global:
+    global_child1_level1_chart1_key: global_child_level1_chart1_key_value
+    global_common_key: global_common_key_value
+    global_common_key_different: global_common_key_different_parent1_value
+    global_parent1_key: global_parent1_key_value
+global:
+  global_common_key: global_common_key_value
+  global_common_key_different: global_common_key_different_parent1_value
+  global_parent1_key: global_parent1_key_value
+
+HOOKS:
+MANIFEST:
+
+---
+# Source: parent_chart/charts/child_chart/charts/child_level2_chart1/templates/template_sub_child.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-sub-child
+  labels:
+    test1: global_common_key_different_parent1_value
+    test2: global_common_key_value
+    test3: global_parent1_key_value
+    test4: global_child_level1_chart1_key_value
+    test5: child_level2_chart1_key_value
+
+    test6: global_common_key_different_parent1_value
+    test7: global_common_key_value
+    test8: global_parent1_key_value
+    test9: global_child_level1_chart1_key_value
+    test10: child_level2_chart1_key_value
+
+    test11: global_common_key_different_parent1_value
+    test12: global_common_key_value
+    test13: global_parent1_key_value
+    test14: global_child_level1_chart1_key_value
+    test15: child_level2_chart1_key_value
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+---
+# Source: parent_chart/charts/child_chart/templates/template_child.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-child
+  labels:
+    test1: global_common_key_different_parent1_value
+    test2: global_common_key_value
+    test3: global_parent1_key_value
+    test4: global_child_level1_chart1_key_value
+    test5:
+
+    test6: global_common_key_different_parent1_value
+    test7: global_common_key_value
+    test8: global_parent1_key_value
+    test9: global_child_level1_chart1_key_value
+    test10:
+
+    test11: global_common_key_different_parent1_value
+    test12: global_common_key_value
+    test13: global_parent1_key_value
+    test14: global_child_level1_chart1_key_value
+    test15:
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+---
+# Source: parent_chart/templates/template_parent.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-parent
+  labels:
+    test1: global_common_key_different_parent1_value
+    test2: global_common_key_value
+    test3: global_parent1_key_value
+    test4:
+    test5:
+
+    test6: global_common_key_different_parent1_value
+    test7: global_common_key_value
+    test8: global_parent1_key_value
+    test9:
+    test10:
+
+    test11: global_common_key_different_parent1_value
+    test12: global_common_key_value
+    test13: global_parent1_key_value
+    test14:
+    test15:
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+

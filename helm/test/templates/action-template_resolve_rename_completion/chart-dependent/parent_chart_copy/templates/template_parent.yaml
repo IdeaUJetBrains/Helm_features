@@ -1,0 +1,57 @@
+{{- define "parent_y" }}
+  test_y_p1: test_p1_value
+  test_y_p2: test_p2_value
+  chart: {{ .Chart.Name }}
+  version: {{ .Chart.Version }}
+{{- end }}
+{{- define "parent_y.with_parent" }}
+  test_y_p_t1: {{ template "parent1" . }}
+{{- end }}
+{{- define "parent_y.with_child" }}
+  test_y_p_t2: {{ template "child1" . }}
+{{- end }}
+{{- define "parent_y.with_sub_child" }}
+  test_y_p_t3: {{ template "sub.child1" . }}
+{{- end }}
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-parent
+  labels:
+    {{- template "parent_y" }}
+    test1: {{ template "parent1" . }}
+    test2: {{ template "parent2" . }}
+
+    test6: {{ template "child1" . }}
+    test7: {{ template "child2" . }}
+
+    test11: {{ template "sub.child1" . }}
+    test12: {{ template "sub.child2" . }}
+
+    {{ template "parent_h_from_yaml.parent" . }}
+    {{ template "parent_h_from_yaml.child" . }}
+    {{ template "parent_h_from_yaml.sub_child" . }}
+    {{ template "parent_y" . }}
+    {{ template "parent_y.with_parent" . }}
+    {{ template "parent_y.with_child" . }}
+    {{ template "parent_y.with_sub_child" . }}
+    {{ template "child_h_from_yaml.parent" . }}
+    test21: {{ template "child_h_from_yaml.child" . }}
+    test22: {{ template "child_h_from_yaml.sub_child" . }}
+    test23: {{ template "child_y" . }}
+    test24: {{ template "child_y_with_parent" . }}
+    test25: {{ template "child_y_with_child" . }}
+    test26: {{ template "child_y_with_sub_child" . }}
+    test27: {{ template "sub_child_h_from_yaml.parent" . }}
+    test28: {{ template "sub_child_h_from_yaml.child" . }}
+    test29: {{ template "sub_child_h_from_yaml.sub_child" . }}
+    test30: {{ template "sub_child_y" . }}
+    test31: {{ template "sub_child_y_with_parent" . }}
+    test32: {{ template "sub_child_y_with_child" . }}
+    test33: {{ template "sub_child_y_with_sub_child_renamed" . }}
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+

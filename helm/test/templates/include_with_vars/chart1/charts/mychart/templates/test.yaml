@@ -1,0 +1,11 @@
+{{- $label_from_var := "from_helpers.vars.value.tpl1"}}
+{{- $label_from_var := "labels"}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: template-parent1
+  labels:
+    var_label_value: {{ $label_from_var }}
+
+data:
+  myvalue: "my data from myvalue key"

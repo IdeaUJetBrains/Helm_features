@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: test_name
+  labels:
+    test0: test0
+spec:
+  template:
+    metadata:
+      labels:
+        test0: test0
+        {{- with .Values.favorite }}
+        test1: {{.food}}
+        {{- end }}

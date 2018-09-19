@@ -1,0 +1,4 @@
+global:
+  global_parent1_key: global_parent1_key_value
+  global_common_key: global_common_key_value
+  global_common_key_different: global_common_key_different_parent1_value

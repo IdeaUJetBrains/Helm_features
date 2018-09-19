@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Chart.Name}}
+  labels:
+    tpl_label_value: {{include "from_helpers.tpl1" . }}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: Deployment_label_selectors
+      labels:
+        tpl_label_value: {{include "from_helpers.tpl1" . }}
+    spec:
+      containers:
+      - name: dep_name
+        image: tomcat
+        imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      tpl_label_value: {{include "from_helpers.tpl1" . }}

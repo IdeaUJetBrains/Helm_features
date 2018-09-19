@@ -1,0 +1,5 @@
+parent_key:
+  test1: parent_value
+
+global:
+  global_parent_key: g_p_value

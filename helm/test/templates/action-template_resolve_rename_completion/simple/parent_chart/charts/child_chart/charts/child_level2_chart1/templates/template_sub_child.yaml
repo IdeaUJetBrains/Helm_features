@@ -1,0 +1,21 @@
+{{- define "sub_child_y" }}
+    test_y_sub_ch1: test_sub_ch_t1_value
+    test_y_sub_ch2: test_sub_ch_t2_value
+{{- end }}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-sub-child
+  labels:
+    test1: {{ template "parent1_h" . }}
+    test6: {{ template "child1_h" . }}
+    test11: {{ template "sub.child1_h" . }}
+    {{ template "parent_y" . }}
+    {{ template "child_y" . }}
+    {{ template "sub_child_y" . }}
+
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+

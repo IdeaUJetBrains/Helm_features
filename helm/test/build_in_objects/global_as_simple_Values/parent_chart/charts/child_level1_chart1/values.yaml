@@ -1,0 +1,5 @@
+child_key:
+  test1: child_value
+
+global:
+  global_child_key: g_ch_value

@@ -1,0 +1,5 @@
+sub_child_key:
+  test1: sub_child_value
+
+global:
+  global_sub_child_key: g_subch_value

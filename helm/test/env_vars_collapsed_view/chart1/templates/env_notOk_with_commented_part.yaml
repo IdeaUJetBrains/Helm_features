@@ -9,8 +9,6 @@ spec:
         - name: sss
           env:
             {{/*notOk:*/}}
-            - name: "ACCEPT_EULA"
-              value: "{{ .Values.global.global_key2 }}"
             - name: DASK_SCHEDULER_ADDRESS
               value: {{ template "from_helpers.tpl1-existing" . }}-scheduler:{{ .Values.global.global_key2 }}
             {{/*- name: DASK_SCHEDULER_ADDRESS_Not-exiting*/}}

@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: parent-template
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+{{/* values from all sub-charts are available */}}
+{{/* parent */}}
+    test1: {{.Values.parent1_test1.test1_1.test1_1_1 }}
+    test2: {{.Values.parent1_test1.test1_1.test1_1_1.test1_1_1_1}}
+    test3: {{.Values.parent1_test1.test1_2.test1_2_1}}
+    test4: {{.Values.parent1_test1.test1_2.test1_2_2 }}
+  {{/* child2 */}}
+    test11: {{.Values.child_level1_chart2.child_level1_chart2_test1.test1_2.test1_2_1 }}
+    test12: {{.Values.child_level1_chart2.child_level1_chart2_test1.test1_2.test1_2_2 }}
+    test13: {{.Values.child_level1_chart2.child_level1_chart2_test1.test1_1.test1_1_1 }}
+    test14: {{.Values.child_level1_chart1.global.g1 }}
+  {{/* child1 */}}
+    test18: {{.Values.child_level1_chart1.child1_level1_chart1_test1.test1_2.test1_2_1 }}
+    test19: {{.Values.child_level1_chart1.child1_level1_chart1_test1.test1_2.test1_2_2 }}
+    test20: {{.Values.child_level1_chart1.child1_level1_chart1_test1.test1_1.test1_1_1 }}
+    test21: {{.Values.child_level1_chart1.child1_level1_chart1_test1.test1_1.test1_1_1.test1_1_1_1 }}
+  {{/* sub-child1 */}}
+    test25: {{.Values.child_level1_chart1.child_level2_chart1.child_level2_chart1_test1.test1_2.test1_2_1 }}
+    test26: {{.Values.child_level1_chart1.child_level2_chart1.child_level2_chart1_test1.test1_2.test1_2_2 }}
+    test27: {{.Values.child_level1_chart1.child_level2_chart1.child_level2_chart1_test1.test1_1.test1_1_1 }}
+    test28: {{.Values.child_level1_chart1.child_level2_chart1.child_level2_chart1_test1.test1_1.test1_1_1.test1_1_1_1 }}
+
+data:
+  myvalue: "my data from myvalue key"
+

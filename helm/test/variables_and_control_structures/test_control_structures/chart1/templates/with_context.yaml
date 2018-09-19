@@ -30,7 +30,7 @@ spec:
       {{- with .Values.favorite }}
       release: {{ .Release.Name }}
       {{- end }}
-      {{- $relname := .Release.Name -}}
+      {{- $relname1 := .Release.Name -}}
       {{- with .Values.favorite }}
-      release1: {{ $relname }}
+      release1: {{ $relname1 }}
       {{- end }}

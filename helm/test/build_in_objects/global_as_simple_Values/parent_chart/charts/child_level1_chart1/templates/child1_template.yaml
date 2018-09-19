@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: child1_template
+  labels:
+    test1: {{.Values.child_level2_chart1.global.global_sub_child_key}}
+data:
+  myvalue: "my data from myvalue key"

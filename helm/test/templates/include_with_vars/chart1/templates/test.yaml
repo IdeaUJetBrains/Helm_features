@@ -1,0 +1,11 @@
+{{- $labels := "labels"}}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-parent1
+  labels:
+    {{ include $labels  . }}
+type: test
+
+data:
+  myvalue: "my data from myvalue key"

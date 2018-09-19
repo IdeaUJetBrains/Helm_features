@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   child1:
   - appVersion: v1
-    created: 2018-09-19T14:55:38.1661919+02:00
+    created: 2018-09-19T14:57:37.3152626+02:00
     description: my service
     digest: 5d01605823eff1091e954d28dff40970052a2fa89c44a624955d770bd2b9cd18
     keywords:
@@ -17,7 +17,7 @@ entries:
     version: "2"
   child1child:
   - appVersion: v1
-    created: 2018-09-19T14:55:38.1671915+02:00
+    created: 2018-09-19T14:57:37.316262+02:00
     description: my service
     digest: d5bbd4d9fdabbe065c2adb4717d1180692c1069979fa15fffa62908d96892f7f
     keywords:
@@ -32,9 +32,9 @@ entries:
     version: "2"
   child2:
   - appVersion: v1
-    created: 2018-09-19T14:55:38.1681946+02:00
+    created: 2018-09-19T14:57:37.3182619+02:00
     description: my service
-    digest: 61e3f09b5bc9df60807e6e664aac3953665dd7167cd5e9136982a6a4cbb242ad
+    digest: 80c4bba1a10d35f71ecd8c3f51c177945adbf32c17c46beb4f15d642c92f450b
     keywords:
     - my
     - docker
@@ -47,9 +47,9 @@ entries:
     version: "2"
   parent_chart:
   - appVersion: v1
-    created: 2018-09-19T14:55:38.1691908+02:00
+    created: 2018-09-19T14:57:37.3192615+02:00
     description: my service
-    digest: b7e46fb11c6152268ef6e40e48b730a3778ded89e5c861796a2ba293bca929c3
+    digest: 568d3c650c3c6bee4f9491fa900e9458a720d4cc930c1e886818455359d2baf9
     keywords:
     - my
     - docker
@@ -60,4 +60,4 @@ entries:
     urls:
     - parent_chart-2.tgz
     version: "2"
-generated: 2018-09-19T14:55:38.1651916+02:00
+generated: 2018-09-19T14:57:37.3132614+02:00

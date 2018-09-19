@@ -20,7 +20,7 @@ metadata:
     test10: {{.Values.common_key2.common_key2_1 }}
     test11: {{.Values.child_level1_chart2_test1.test1_2.test1_2_1 }}
     test12: {{.Values.child_level1_chart2_test1.test1_2.test1_2_2 }}
-    test13: {{.Values.child_level1_chart2_test1 }}
+    {{/*test13: {{.Values.child_level1_chart2_test1 }}*/}}
     test14: {{.Values.child_level1_chart2_test1.test1_1.test1_1_1.test1_1_1_1 }}
 
   {{/*wrong,  child1  */}}
@@ -31,7 +31,7 @@ metadata:
     {{/*test19: {{.Values.child_level1_chart1.child1_level1_chart1_test1.test1_2.test1_2_2 }}*/}}
     {{/*test20: {{.Values.child_level1_chart1.child1_level1_chart1_test1.test1_1.test1_1_1 }}*/}}
     {{/*test21: {{.Values.child_level1_chart1.child1_level1_chart1_test1.test1_1.test1_1_1.test1_1_1_1 }}*/}}
-  {{/* sub-child1 */}}
+  {{/* wrong,  sub-child1 */}}
     {{/*test22: {{.Values.child_level1_chart1.child_level2_chart1.common_key_different_values }}*/}}
     {{/*test23: {{.Values.child_level1_chart1.child_level2_chart1.common_key1 }}*/}}
     {{/*test24: {{.Values.child_level1_chart1.child_level2_chart1.common_key2.common_key2_1 }}*/}}

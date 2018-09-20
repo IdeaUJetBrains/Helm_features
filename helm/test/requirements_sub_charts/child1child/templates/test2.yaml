@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-chart2
+  labels:
+    chart: {{ template "from_helpers.tpl2" . }}
+type: test
+
+data:
+  myvalue: "my data from myvalue key"
+

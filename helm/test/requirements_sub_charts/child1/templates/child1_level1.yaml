@@ -37,6 +37,8 @@ metadata:
     test26: {{.Values.child1child.child_level2_chart1_test1.test1_2.test1_2_2 }}
     {{/*test27: {{.Values.child1child.child_level2_chart1_test1.test1_1.test1_1_1 }}*/}}
     test28: {{.Values.child1child.child_level2_chart1_test1.test1_1.test1_1_1.test1_1_1_1 }}
+    test29: {{.Values.global.global_common_key}}
+    test30: {{.Values.global.global_common_key_different}}
 
 data:
   myvalue: "my data from myvalue key"

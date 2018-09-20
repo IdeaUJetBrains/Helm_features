@@ -1,0 +1,29 @@
+{{- if .Values.ingress.enabled -}}
+{{ $serviceName := .Chart.Name  }}
+{{- $servicePort := .Values.service.externalPort -}}
+{{- else }}
+{{ $serviceName := .Chart.Name  }}
+{{- $servicePort := .Values.service.externalPort -}}
+{{- $servicePort1 := default .Values.service.externalPort -}}
+{{- $servicePort2 := default .Chart.Name .Values.service.externalPort -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: test
+  labels:
+    app: test
+    {{- with .Values.favorite }}
+    test1: {{.food}}
+    {{- end }}
+spec:
+  rules:
+    {{- range $host := .Values.ingress.hosts }}
+    - host: {{ $host }}
+      http:
+       paths:
+         - path: /
+           backend:
+              serviceName: {{ $serviceName }}
+              servicePort: {{ $servicePort }}
+     {{- end -}}
+{{- end -}}

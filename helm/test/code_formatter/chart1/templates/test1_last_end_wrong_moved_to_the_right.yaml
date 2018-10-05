@@ -1,0 +1,13 @@
+{{ range (until (.Values.chain.numberOfNodes | int)) }}
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    chart: "{{ $.Chart.Name }}-{{ $.Chart.Version }}"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        release: {{ $.Release.Name }}
+{{- end }}

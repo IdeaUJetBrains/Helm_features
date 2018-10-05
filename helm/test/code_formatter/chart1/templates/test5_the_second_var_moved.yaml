@@ -1,0 +1,18 @@
+{{- $servicePort := "8080" -}}
+{{- $serviceName := "test"  -}}
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: test
+spec:
+  rules:
+  - host: test
+    http:
+      paths:
+      - path: {{ . }}
+        backend:
+          serviceName: {{ $serviceName }}
+          servicePort: {{ $servicePort }}
+
+

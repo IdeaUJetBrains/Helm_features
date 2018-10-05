@@ -4,20 +4,16 @@ metadata:
   name: my_config_map_name_parent
   labels:
   {{/*from child_level1*/}}
-    test1: {{.Values.child_level1_chart.common_key_different_values}}
     test2: {{.Values.child_level1_chart.child_level1_test1}}
-    test3: {{.Values.child_level1_chart.global}}
   {{/*from child_level2*/}}
-    test4: {{.Values.child_level1_chart.child_level2_chart.common_key_different_values}}
     test5: {{.Values.child_level1_chart.child_level2_chart.child_level2_test1}}
-    test6: {{.Values.child_level1_chart.child_level2_chart.global}}
   {{/*from parent*/}}
-    test7: {{.Values.common_key_different_values}}
     test8: {{.Values.parent_test1}}
-    test9: {{.Values.global}}
-  {{/*wrong - without chart pointing*/}}
-    test10: {{.Values.child_level1_test1}}
-    test11: {{.Values.child_level2_test1}}
+
+  {{/*overridded values*/}}
+    test_1: {{.Values.child_level1_chart.child_from_parent_new}}
+    test_2: {{.Values.child_level1_chart.child_level2_chart.child_level2_test1}}
+
 
 
 data:

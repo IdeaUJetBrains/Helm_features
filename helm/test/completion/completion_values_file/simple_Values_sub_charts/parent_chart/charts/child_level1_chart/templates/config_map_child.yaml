@@ -3,6 +3,10 @@ kind: ConfigMap
 metadata:
   name: my_config_map_name_child
   labels:
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+          {{/*from child_level1*/}}
+    test2: {{.Values.child_level1_test1}}
+          {{/*overridded values*/}}
+    test_1: {{.Values.child_level2_chart.child_level2_test1}}
+    test_2: {{.Values.child_from_parent_new}}
 data:
   myvalue: "my data from myvalue key"

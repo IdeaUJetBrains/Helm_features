@@ -1,2 +1,7 @@
-common_key_different_values: common_key_different_values_child_level1_value
 child_level1_test1: child_level1_test1_value
+
+
+child_level2_chart:
+  child_level2_test1: child_overridden_child_level2_test1_value
+
+child_from_parent_new: test

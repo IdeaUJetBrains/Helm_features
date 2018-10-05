@@ -1,14 +1,19 @@
+{{- define "y_parent_usual_key_template" -}}
+y_test: {{ .Values.parent_test1 }}
+{{- end -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: my_config_map_name_parent
   labels:
-    {{template "parent_template" }}
-    {{template "child_template" }}
-    {{template "sub_child_template" }}
-    {{template "parent_should_be_ok_template" }}
-    {{template "parent_ok_template" }}
-    {{template "parent_usual_key_template" }}
+    test_1: {{.Values.parent_test1}}
+    {{template "parent_template" . }}
+    {{template "child_template" . }}
+    {{template "sub_child_template"  . }}
+    {{template "parent_should_be_ok_template" . }}
+    {{template "parent_ok_template" . }}
+    {{template "parent_usual_key_template" . }}
+    {{ template "y_parent_usual_key_template" . }}
 
 data:
   myvalue: "my data from myvalue key"

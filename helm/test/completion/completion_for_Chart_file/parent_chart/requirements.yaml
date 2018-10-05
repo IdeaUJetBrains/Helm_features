@@ -1,0 +1,12 @@
+dependencies:
+- name: child1
+  version: x
+  repository: https://ideaujetbrains.github.io/Helm_features/
+  import-values:
+    - data
+- name: child2
+  version: x
+  repository: https://ideaujetbrains.github.io/Helm_features/
+  import-values:
+    - child: default.data
+      parent: myimports

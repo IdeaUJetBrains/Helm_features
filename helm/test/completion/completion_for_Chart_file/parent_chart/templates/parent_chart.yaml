@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: parent_chart
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+{{/* parent */}}
+    test1: 0
+    test2: {{.Values.parent1_test1.test1_1.test1_1_1.test1_1_1_1}}
+    test3: {{.Values.parent1_test1.test1_2.test1_2_1}}
+    test4: {{.Values.parent1_test1.test1_2.test1_2_2 }}
+    test5: {{.Values.common_key1 }}
+    test6: {{.Values.common_key2.common_key2_1 }}
+    test7: {{.Values.common_key_different_values}}
+  {{/* child2 */}}
+    test8: {{.Values.child2.common_key_different_values }}
+    test9: {{.Values.child2.common_key1 }}
+    test10: {{.Values.child2.common_key2.common_key2_1 }}
+    test11: {{.Values.child2.child_level1_chart2_test1.test1_2.test1_2_1 }}
+    test12: {{.Values.child2.child_level1_chart2_test1.test1_2.test1_2_2 }}
+    test13: {{.Values.child2.child_level1_chart2_test1.test1_1.test1_1_1 }}
+    test14: {{.Values.child2.child_level1_chart2_test1.test1_1.test1_1_1.test1_1_1_1 }}
+  {{/* child1 */}}
+    test15: {{.Values.child1.common_key_different_values }}
+    test16: {{.Values.child1.common_key1 }}
+    test17: {{.Values.child1.common_key2.common_key2_1 }}
+    test18: {{.Values.child1.child1_level1_chart1_test1.test1_2.test1_2_1 }}
+    test19: {{.Values.child1.child1_level1_chart1_test1.test1_2.test1_2_2 }}
+    test20: {{.Values.child1.child1_level1_chart1_test1.test1_1.test1_1_1 }}
+    test21: {{.Values.child1.child1_level1_chart1_test1.test1_1.test1_1_1.test1_1_1_1 }}
+  {{/* sub-child1 */}}
+    test22: {{.Values.child1.child1child.common_key_different_values }}
+    test23: {{.Values.child1.child1child.common_key1 }}
+    test24: {{.Values.child1.child1child.common_key2.common_key2_1 }}
+    test25: {{.Values.child1.child1child.child_level2_chart1_test1.test1_2.test1_2_1 }}
+    test26: {{.Values.child1.child1child.child_level2_chart1_test1.test1_2.test1_2_2 }}
+    test27: {{.Values.child1.child1child.child_level2_chart1_test1.test1_1.test1_1_1 }}
+    test28: {{.Values.child1.child1child.child_level2_chart1_test1.test1_1.test1_1_1.test1_1_1_1 }}
+    test29: {{.Values.global.global_common_key_different}}
+
+data:
+  myvalue: "my data from myvalue key"

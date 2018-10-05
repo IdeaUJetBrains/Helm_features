@@ -1,0 +1,19 @@
+name: parent_chart
+version: 2
+appVersion: v1
+description: my service
+keywords:
+ - my
+ - docker
+maintainers:
+ - name: opavlova
+   email: Olga.Pavlova@jetbrains.com
+apiVersion:
+deprecated: false
+engine: dd
+home: dd
+icon: sss
+kubeVersion: 1.11
+sources: sss
+tillerVersion: 3.0.0
+swdwrrrrrrrrrrrrrrrrrr: ee

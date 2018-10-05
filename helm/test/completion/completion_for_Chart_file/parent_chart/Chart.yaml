@@ -1,0 +1,10 @@
+name: parent_chart
+version: 2
+appVersion: v1
+description: my service
+keywords:
+  - test1
+  - test2
+maintainers:
+  - name: opavlova
+    email: Olga.Pavlova@jetbrains.com

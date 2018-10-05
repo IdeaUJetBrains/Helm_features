@@ -1,0 +1,9 @@
+global:
+  global_child_level1_chart1_key: global_child_level1_chart1_key_value
+  global_common_key_different: global_common_key_different_child_level1_chart1_1_value
+
+
+child_level2_chart1:
+  global:
+    global_child_level2_chart1_key: in_child1_redefined_key_from_level2
+

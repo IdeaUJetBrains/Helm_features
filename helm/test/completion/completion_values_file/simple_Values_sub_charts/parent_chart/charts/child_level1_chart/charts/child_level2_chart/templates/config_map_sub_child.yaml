@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-    name: my_config_map_name_subchild
-    labels:
-        test: {{.Values.child_level2_test1}}
-data:
-    myvalue: "my data from myvalue key"

@@ -14,7 +14,5 @@ metadata:
     test_1: {{.Values.child_level1_chart.child_from_parent_new}}
     test_2: {{.Values.child_level1_chart.child_level2_chart.child_level2_test1}}
 
-
-
 data:
   myvalue: "my data from myvalue key"

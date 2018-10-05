@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: my_config_map_name_subchild
+    labels:
+        test: {{.Values.child_level2_test1}}
+        test_global: {{.Values.global.new_global_key_sub_child}}
+
+        {{template "parent_template" }}
+        {{template "child_template" }}
+        {{template "sub_child_template" }}
+        {{template "parent_should_be_ok_template" }}
+        {{template "parent_ok_template" }}
+data:
+    myvalue: "my data from myvalue key"

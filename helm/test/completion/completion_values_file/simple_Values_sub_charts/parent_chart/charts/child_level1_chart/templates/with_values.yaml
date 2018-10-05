@@ -8,5 +8,6 @@ metadata:
           {{/*overridded values*/}}
     test_1: {{.Values.child_level2_chart.child_level2_test1}}
     test_2: {{.Values.child_from_parent_new}}
+    test_global_key: {{.Values.global.new_global_key_child}}
 data:
   myvalue: "my data from myvalue key"

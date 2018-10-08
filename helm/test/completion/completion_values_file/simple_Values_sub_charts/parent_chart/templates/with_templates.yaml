@@ -9,8 +9,8 @@ metadata:
     test_1: {{.Values.parent_test1}}
     {{template "parent_template" . }}
     {{template "child_template" . }}
-    {{template "sub_child_template"  . }}
-    {{template "parent_should_be_ok_template" . }}
+    {{template "sub_child_template"  . }}tt
+    {{template "parent_should_be_ok_template_but_is_OK_only_in_parent" . }}
     {{template "parent_ok_template" . }}
     {{template "parent_usual_key_template" . }}
     {{ template "y_parent_usual_key_template" . }}

@@ -6,7 +6,7 @@ metadata:
     {{template "parent_template" . }}
     {{template "child_template" . }}
     {{template "sub_child_template" . }}
-    {{template "parent_should_be_ok_template" . }}
+    {{/*{{template "parent_should_be_ok_template_but_is_OK_only_in_parent" . }}*/}}
     {{template "parent_ok_template" . }}
 data:
   myvalue: "my data from myvalue key"

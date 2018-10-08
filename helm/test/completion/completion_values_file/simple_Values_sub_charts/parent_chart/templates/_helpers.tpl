@@ -1,9 +1,9 @@
-{{/*should not be ok*/}}
+{{/*should not be ok???*/}}
 {{- define "parent_template" -}}
 test_parent_global_tpl: {{ .Values.global.new_global_key_sub_child }}
 {{- end -}}
 {{/*Ok*/}}
-{{- define "parent_should_be_ok_template" -}}
+{{- define "parent_should_be_ok_template_but_is_OK_only_in_parent" -}}
 should_be_ok_key: {{ .Values.child_level1_chart.global.new_global_key_child }}
 {{- end -}}
 {{/*Ok*/}}

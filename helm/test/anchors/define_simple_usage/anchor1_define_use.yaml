@@ -1,0 +1,21 @@
+foo: &anchor
+  K1: "One"
+  K2: "Two"
+
+bar: *anchor
+
+bar1: *anchor
+
+
+
+Result of "foo" and "bar":
+  {
+    "foo": {
+      "K1": "One",
+      "K2": "Two"
+    },
+    "bar": {
+      "K1": "One",
+      "K2": "Two"
+    }
+  }

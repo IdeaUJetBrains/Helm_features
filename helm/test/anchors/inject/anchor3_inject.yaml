@@ -1,0 +1,25 @@
+foo:
+  <<: &anchor
+    K1: "One"
+  K2: "Two"
+
+bar:
+  <<: *anchor
+  K3: "Three"
+
+bar1:
+  <<: *anchor
+  K3: "Three"
+
+#if you wanted to take only SOME keys from foo and inject them into bar
+Result of "foo" and "bar":
+  {
+    "foo": {
+      "K1": "One",
+      "K2": "Two"
+    },
+    "bar": {
+      "K1": "One",
+      "K3": "Three"
+    }
+  }

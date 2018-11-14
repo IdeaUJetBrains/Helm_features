@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Deployment_label_selectors
+  labels: &anchor
+    lab: anch_label
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: Deployment_label_selectors
+      labels: *anchor
+    spec:
+      containers:
+      - name: dep_name
+        image: tomcat
+        imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels: *anchor

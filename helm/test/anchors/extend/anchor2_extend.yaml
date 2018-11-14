@@ -1,0 +1,28 @@
+foo: &anchor
+  K1: "One"
+  K2: "Two"
+
+bar:
+  <<: *anchor
+  K2: "I Changed"
+  K3: "Three"
+
+bar1:
+  <<: *anchor
+  K2: "I Changed"
+  K3: "Three"
+
+#The << marker means extend, so <<: *anchor means, basically, inject anchor into bar, then extend
+
+Result of "foo" and "bar":
+  {
+    "foo": {
+      "K1": "One",
+      "K2": "Two"
+    },
+    "bar": {
+      "K1": "One",
+      "K2": "I Changed",
+      "K3": "Three"
+    }
+  }

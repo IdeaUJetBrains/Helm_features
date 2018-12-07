@@ -1,17 +1,5 @@
 parent_test1: parent_test1_value
 
 child_level1_chart:
-  global:
-    new_global_key_child: new_global_key_child_value
-  child_from_parent_new: child_from_parent_new_v
-  child_level1_test1: overridden_child_level1_test1_v
   child_level2_chart:
-    child_level2_test1: parent_overridden_level2_v
-    new_key: test
-    global:
-      new_global_key_sub_child: new_global_key_sub_child_value
 
-global:
-  test_g_p_1: test
-
-test: ddd

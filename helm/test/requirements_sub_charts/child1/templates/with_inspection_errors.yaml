@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Binding
+metadata:
+  name: child1_level1
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+test: ddd

@@ -1,0 +1,12 @@
+# Datasource local storage ignored files
+..\:/Users/Olga Pavlova/IdeaProjects/ALL_K8TS_PROJECTS/Helm_features/.idea/dataSources
+dataSources.local.xml
+
+# Editor-based HTTP Client requests
+http-client.private.env.json
+..\:/Users/Olga Pavlova/IdeaProjects/ALL_K8TS_PROJECTS/Helm_features/.idea/httpRequests
+rest-client.private.env.json
+
+# Default ignored files
+.idea/workspace.xml
+..\:/Users/Olga Pavlova/IdeaProjects/ALL_K8TS_PROJECTS/Helm_features/.idea/shelf

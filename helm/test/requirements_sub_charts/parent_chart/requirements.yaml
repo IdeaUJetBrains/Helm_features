@@ -3,9 +3,10 @@ dependencies:
   version: x
   repository: https://ideaujetbrains.github.io/Helm_features/
   import-values:
-  - data
+    - data
 - name: child2
   version: x
   repository: https://ideaujetbrains.github.io/Helm_features/
   import-values:
-  - data
+    - child: default.data
+      parent: myimports

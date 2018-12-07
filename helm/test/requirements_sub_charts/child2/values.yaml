@@ -1,10 +1,7 @@
-exports:
+default:
   data:
-    myint: 2
-myimports:
-  myint: 0
-  mybool: false
-  mystring: "helm rocks!"
+    myint: 999
+    mybool: true
 
 global:
   global_child1_level1_chart2_key: child_level1_chart2_key_value

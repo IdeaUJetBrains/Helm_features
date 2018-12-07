@@ -1,5 +1,6 @@
 {{- $provider := .Values.global.global_key2 -}}
 {{- $templatename := .Values.global.global_key3 -}}
+{{- $provider := "test_value" -}}
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:

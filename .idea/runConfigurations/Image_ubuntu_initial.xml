@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Image_ubuntu_initial" type="docker-deploy" factoryName="docker-image" server-name="Docker">
+    <deployment type="docker-image">
+      <settings>
+        <option name="command" value="bash" />
+        <option name="containerName" value="" />
+        <option name="entrypoint" value="" />
+        <option name="imageTag" value="ubuntu" />
+        <option name="commandLineOptions" value="--privileged -t -i" />
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>

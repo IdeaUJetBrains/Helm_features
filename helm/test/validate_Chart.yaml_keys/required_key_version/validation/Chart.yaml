@@ -1,0 +1,43 @@
+name: validation
+version: 2
+version: 21.1
+version: 2.11
+version: 2.1.1.
+version: 02.1.1
+version: 2.01.1
+version: 2.1.01
+version: 2.1.1.1
+version: "0"
+version: "21.1"
+version: "2.11"
+version: "2.1.1."
+version: "02.1.1"
+version: "2.01.1"
+version: "2.1.01"
+version: "2.1.1.1"
+version: aaa
+version: a.a.a
+version: .
+version: !@#$%%^&&**__
+
+
+version: "1.0.0-alpha"
+version: "1.0.0-0.3.7"
+version: "1.0.0-alpha.1"
+version: "1.0.0-x.7.z.92"
+
+version: 0.0.0
+version: 1.0.0-alpha
+version: 1.0.0-0.3.7
+version: 1.0.0-alpha.1
+version: 1.0.0-x.7.z.92
+
+appVersion: v1
+description: my service
+keywords:
+  - my
+  - docker
+maintainers:
+  - name: opavlova
+    email: Olga.Pavlova@jetbrains.com
+

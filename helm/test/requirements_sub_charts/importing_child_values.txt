@@ -1,0 +1,24 @@
+https://github.com/helm/helm/blob/master/docs/charts.md
+
+shared as common defaults
+====================
+1 WAY
+====================
+in parents' requirements.yaml should be:
+  ...
+  import-values:
+    - data
+
+in child's values.yaml should be as a root item:
+exports:
+  data:
+    myint: 99
+
+Result: The final parent values would contain our exported field:
+
+myint: 99
+
+
+=====================
+2Way
+=====================

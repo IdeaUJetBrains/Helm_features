@@ -1,0 +1,4 @@
+#missing "required" key:  apiVersion
+name: quick-fix
+version: "1.0.0-alpha"
+

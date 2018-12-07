@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: template-parent
+  test_key: test
+  labels:
+    {{- template "parent_y" }}
+    test1: {{ template "parent1_h" . }}
+    test6: {{ template "child1_h" . }}
+    test11: {{ template "sub.child1_h" . }}
+    {{ template "child_y" . }}
+    {{ template "sub_child_y" . }}
+
+type: test
+test_key: test
+
+data:
+  myvalue: "my data from myvalue key"
+test: dkdms
+

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Chart.Name}}
+  labels:
+    lab: dep_label
+    name_lab: {{.Chart.Name}}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: Deployment_label_selectors
+      labels:
+        lab: dep_label
+        name_lab: {{.Chart.Named}}
+    spec:
+      containers:
+      - name: dep_name
+        image: tomcat
+        imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      lab: dep_label
+      name_lab: {{.Chart.Name}}

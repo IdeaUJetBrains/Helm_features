@@ -1,0 +1,27 @@
+{{- if .Values.global.global_key3 -}}
+{{ $serviceName := .Chart.Name  }}
+{{- $servicePort := .Values.global.global_key2 -}}
+{{- else }}
+{{ $serviceName := .Chart.Name  }}
+{{- $servicePort := .Values.global.global_key4 -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: test
+  labels:
+    app: test
+    {{- with .Values.favorite }}
+    test1: {{.food}}
+    {{- end }}
+spec:
+  rules:
+    {{- range $host := .Values.ingress.hosts }}
+    - host: {{ $host }}
+      http:
+       paths:
+         - path: /
+           backend:
+              serviceName: {{ $serviceName }}
+              servicePort: {{ $servicePort }}
+     {{- end -}}
+{{- end -}}

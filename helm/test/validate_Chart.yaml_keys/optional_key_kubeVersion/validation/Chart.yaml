@@ -1,0 +1,38 @@
+name: validation
+version: 0.0.0
+appVersion: v1
+kubeVersion: 1.1.1
+kubeVersion: 2
+kubeVersion: 21.1
+kubeVersion: 2.11
+kubeVersion: 2.1.1.
+kubeVersion: 02.1.1
+kubeVersion: 2.01.1
+kubeVersion: 2.1.01
+kubeVersion: 2.1.1.1
+kubeVersion: "0"
+kubeVersion: "21.1"
+kubeVersion: "2.11"
+kubeVersion: "2.1.1."
+kubeVersion: "02.1.1"
+kubeVersion: "2.01.1"
+kubeVersion: "2.1.01"
+kubeVersion: "2.1.1.1"
+kubeVersion: aaa
+kubeVersion: a.a.a
+kubeVersion: .
+kubeVersion: !@#$%%^&&**__
+
+
+kubeVersion: "1.0.0-alpha"
+kubeVersion: "1.0.0-0.3.7"
+kubeVersion: "1.0.0-alpha.1"
+kubeVersion: "1.0.0-x.7.z.92"
+
+kubeVersion: 0.0.0
+kubeVersion: 1.0.0-alpha
+kubeVersion: 1.0.0-0.3.7
+kubeVersion: 1.0.0-alpha.1
+kubeVersion: 1.0.0-x.7.z.92
+
+

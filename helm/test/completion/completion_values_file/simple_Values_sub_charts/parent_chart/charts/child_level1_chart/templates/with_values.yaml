@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: my_config_map_name_child
+  name: my_config_map_name_child {{.Chart.Name}}
   labels:
           {{/*from child_level1*/}}
     test2: {{.Values.child_level1_test1}}

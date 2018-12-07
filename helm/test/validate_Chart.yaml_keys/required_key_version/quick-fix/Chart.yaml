@@ -1,0 +1,8 @@
+#missing "required" key:  version
+name: quick-fix
+#version: "1.0.0-alpha"
+#tillerVersion: ">=2.4.0"
+appVersion: v1
+
+
+

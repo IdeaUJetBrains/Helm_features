@@ -1,0 +1,7 @@
+name: completion
+version: 0.0.0
+apiVersion: v1
+#maintainers: test
+maintainers:
+  - name: test
+    ema

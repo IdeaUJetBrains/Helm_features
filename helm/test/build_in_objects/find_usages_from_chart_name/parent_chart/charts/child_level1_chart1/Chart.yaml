@@ -1,0 +1,13 @@
+name: child_level1_chart1
+version: 1.0.0-x.7.z.92
+tillerVersion: ">=2.4.0"
+appVersion: v1
+description: my service
+keywords:
+ - my
+ - docker
+maintainers:
+ - name: opavlova
+   email: Olga.Pavlova@jetbrains.com
+
+

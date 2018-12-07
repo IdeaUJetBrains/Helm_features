@@ -15,3 +15,8 @@ common_key2:
   common_key2_1: common_key2_1_value
 
 common_key_different_values: common_key3_parent_value
+
+myimports:
+  myint: 0
+  mybool: false
+  mystring: "helm rocks!"

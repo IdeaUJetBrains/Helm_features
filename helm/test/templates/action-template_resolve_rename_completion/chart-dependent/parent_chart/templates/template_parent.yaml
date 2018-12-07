@@ -22,7 +22,7 @@ metadata:
     {{- template "parent_y" }}
     test1: {{ template "parent1" . }}
     test2: {{ template "parent2" . }}
-
+    
     test6: {{ template "child1" . }}
     test7: {{ template "child2" . }}
 

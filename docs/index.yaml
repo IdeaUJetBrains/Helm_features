@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   child1:
   - appVersion: v1
-    created: 2018-12-20T13:04:01.3576437+01:00
+    created: 2018-12-20T13:08:58.223768+01:00
     description: my service
     digest: e83c04b22a999f0b35f992a1b0a8e88c224765fdbd0989345a563c63827cc8ec
     keywords:
@@ -17,7 +17,7 @@ entries:
     version: "2"
   child1child:
   - appVersion: v1
-    created: 2018-12-20T13:04:01.358647+01:00
+    created: 2018-12-20T13:08:58.224768+01:00
     description: my service
     digest: 9a836c10f83e070da68a5708531a681b764ed644c8bab45ce50b166922f878b4
     keywords:
@@ -32,7 +32,7 @@ entries:
     version: "2"
   child2:
   - appVersion: v1
-    created: 2018-12-20T13:04:01.3596464+01:00
+    created: 2018-12-20T13:08:58.2257678+01:00
     description: my service
     digest: c668b4ea147bc98ff4e76263ada7d87414e2701eb26f078cccdb0bb37189763a
     keywords:
@@ -47,7 +47,7 @@ entries:
     version: "2"
   parent_chart:
   - appVersion: v1
-    created: 2018-12-20T13:04:01.3606422+01:00
+    created: 2018-12-20T13:08:58.2267678+01:00
     description: my service
     digest: 568d3c650c3c6bee4f9491fa900e9458a720d4cc930c1e886818455359d2baf9
     keywords:
@@ -60,4 +60,4 @@ entries:
     urls:
     - parent_chart-2.tgz
     version: "2"
-generated: 2018-12-20T13:04:01.3556318+01:00
+generated: 2018-12-20T13:08:58.2217672+01:00

@@ -3,7 +3,7 @@ entries:
   child1:
   - apiVersion: v1
     appVersion: v1
-    created: "2019-09-24T09:48:54.1244514+02:00"
+    created: "2019-10-01T10:58:02.3948467+02:00"
     dependencies:
     - import-values:
       - data
@@ -27,7 +27,7 @@ entries:
   child1child:
   - apiVersion: v1
     appVersion: v1
-    created: "2019-09-24T09:48:54.1264431+02:00"
+    created: "2019-10-01T10:58:02.3968341+02:00"
     description: my service
     digest: 9a836c10f83e070da68a5708531a681b764ed644c8bab45ce50b166922f878b4
     keywords:
@@ -43,7 +43,7 @@ entries:
   child2:
   - apiVersion: v1
     appVersion: v1
-    created: "2019-09-24T09:48:54.1274473+02:00"
+    created: "2019-10-01T10:58:02.3988446+02:00"
     description: my service
     digest: 68e25c3fc76eb10cba42636fe4b4738fa8dd52573221b02c4fdda48813058cc9
     keywords:
@@ -59,7 +59,7 @@ entries:
   parent_chart:
   - apiVersion: v1
     appVersion: v1
-    created: "2019-09-24T09:48:54.1304424+02:00"
+    created: "2019-10-01T10:58:02.4038521+02:00"
     dependencies:
     - import-values:
       - data
@@ -84,4 +84,19 @@ entries:
     urls:
     - parent_chart-2.tgz
     version: "2"
-generated: "2019-09-24T09:48:54.1214326+02:00"
+  subchart:
+  - apiVersion: v2
+    created: "2019-10-01T10:58:02.4048522+02:00"
+    description: subchart
+    digest: c80b743632f523660b12ae1d72f1741fe3520c10c0ddfc686af084809c095633
+    keywords:
+    - my
+    - docker
+    maintainers:
+    - email: Olga.Pavlova@jetbrains.com
+      name: opavlova
+    name: subchart
+    urls:
+    - subchart-1.1.1.tgz
+    version: 1.1.1
+generated: "2019-10-01T10:58:02.3908374+02:00"

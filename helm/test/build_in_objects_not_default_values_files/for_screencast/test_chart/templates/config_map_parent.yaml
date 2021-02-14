@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my_config_map_name_parent
+  labels:
+    global_key: {{ .Values.global.global_key }}
+
+    my_key: {{.Values.my.key}}
+    key1: {{.Values.key1}}
+    key2: {{.Values.key2}}
+

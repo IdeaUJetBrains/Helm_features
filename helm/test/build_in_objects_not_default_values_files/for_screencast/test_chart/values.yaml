@@ -1,0 +1,7 @@
+global:
+  global_key: global_value
+
+my:
+  key: mykey_value
+key1: key1_value
+key2: key2_value

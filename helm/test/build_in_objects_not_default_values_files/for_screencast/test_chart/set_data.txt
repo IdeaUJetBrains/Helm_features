@@ -1,0 +1,4 @@
+key1=key1_value_via_set
+key2=key2value1\,key2value_via_set
+my.key=my.key_value_via_set
+global.global_key=global_value_via_set

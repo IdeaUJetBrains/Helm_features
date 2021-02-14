@@ -1,0 +1,7 @@
+global:
+  global_key: global_value_sub_chart
+
+my:
+  key: mykey_value_sub_chart
+key1: key1_value_sub_chart
+key2: key2_value_sub_chart

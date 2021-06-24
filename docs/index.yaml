@@ -3,7 +3,7 @@ entries:
   child1:
   - apiVersion: v1
     appVersion: v1
-    created: "2021-06-24T11:03:35.4243656+02:00"
+    created: "2021-06-24T11:09:40.792339+02:00"
     dependencies:
     - alias: child1child-alias
       import-values:
@@ -28,7 +28,7 @@ entries:
   child1child:
   - apiVersion: v1
     appVersion: v1
-    created: "2021-06-24T11:03:35.4263682+02:00"
+    created: "2021-06-24T11:09:40.792339+02:00"
     description: my service
     digest: 273c775c329ecb80acd1f8a738b228f8ffb198e4ae9a5f774b89a15ed3911c9d
     keywords:
@@ -44,7 +44,7 @@ entries:
   child2:
   - apiVersion: v1
     appVersion: v1
-    created: "2021-06-24T11:03:35.4273665+02:00"
+    created: "2021-06-24T11:09:40.7933553+02:00"
     description: my service
     digest: e91eccfeaeb245e515c7179ed620e2e1bc140b1f3a176358418a20f24b483c03
     keywords:
@@ -59,7 +59,7 @@ entries:
     version: 2.1.0
   parent_chart:
   - apiVersion: v1
-    created: "2021-06-24T11:03:35.4303827+02:00"
+    created: "2021-06-24T11:09:40.7964617+02:00"
     dependencies:
     - alias: child1-alias
       import-values:
@@ -75,7 +75,7 @@ entries:
       repository: https://ideaujetbrains.github.io/Helm_features/
       version: 1.0.0
     description: my service
-    digest: 68328d0b29651ff3735cfe9910a9bfc1bd308fbef2d7bd31a7a7642aa71c7849
+    digest: 4ceefd3fdfa1433c35040a5120d11eead05fab522e7b2f8b03264cab8e8f1e91
     keywords:
     - my
     - docker
@@ -88,7 +88,7 @@ entries:
     version: 2.1.1
   subchart:
   - apiVersion: v2
-    created: "2021-06-24T11:03:35.4303827+02:00"
+    created: "2021-06-24T11:09:40.7964617+02:00"
     description: subchart
     digest: c80b743632f523660b12ae1d72f1741fe3520c10c0ddfc686af084809c095633
     keywords:
@@ -101,4 +101,4 @@ entries:
     urls:
     - subchart-1.1.1.tgz
     version: 1.1.1
-generated: "2021-06-24T11:03:35.4223658+02:00"
+generated: "2021-06-24T11:09:40.7893555+02:00"

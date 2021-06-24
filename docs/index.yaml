@@ -3,17 +3,18 @@ entries:
   child1:
   - apiVersion: v1
     appVersion: v1
-    created: "2019-10-01T10:58:02.3948467+02:00"
+    created: "2021-06-24T11:03:35.4243656+02:00"
     dependencies:
-    - import-values:
+    - alias: child1child-alias
+      import-values:
       - data
       - child: default.data
         parent: myimports
       name: child1child
       repository: https://ideaujetbrains.github.io/Helm_features/
-      version: x
+      version: 1.0.0
     description: my service
-    digest: e83c04b22a999f0b35f992a1b0a8e88c224765fdbd0989345a563c63827cc8ec
+    digest: 8aaef6c83aa11f3415f81debf4bf90d0f615198d482a63b2347c2f60ca8f8fe2
     keywords:
     - my
     - docker
@@ -22,14 +23,14 @@ entries:
       name: opavlova
     name: child1
     urls:
-    - child1-2.tgz
-    version: "2"
+    - child1-2.1.1.tgz
+    version: 2.1.1
   child1child:
   - apiVersion: v1
     appVersion: v1
-    created: "2019-10-01T10:58:02.3968341+02:00"
+    created: "2021-06-24T11:03:35.4263682+02:00"
     description: my service
-    digest: 9a836c10f83e070da68a5708531a681b764ed644c8bab45ce50b166922f878b4
+    digest: 273c775c329ecb80acd1f8a738b228f8ffb198e4ae9a5f774b89a15ed3911c9d
     keywords:
     - my
     - docker
@@ -43,9 +44,9 @@ entries:
   child2:
   - apiVersion: v1
     appVersion: v1
-    created: "2019-10-01T10:58:02.3988446+02:00"
+    created: "2021-06-24T11:03:35.4273665+02:00"
     description: my service
-    digest: 68e25c3fc76eb10cba42636fe4b4738fa8dd52573221b02c4fdda48813058cc9
+    digest: e91eccfeaeb245e515c7179ed620e2e1bc140b1f3a176358418a20f24b483c03
     keywords:
     - my
     - docker
@@ -58,22 +59,23 @@ entries:
     version: 2.1.0
   parent_chart:
   - apiVersion: v1
-    appVersion: v1
-    created: "2019-10-01T10:58:02.4038521+02:00"
+    created: "2021-06-24T11:03:35.4303827+02:00"
     dependencies:
-    - import-values:
+    - alias: child1-alias
+      import-values:
       - data
       name: child1
       repository: https://ideaujetbrains.github.io/Helm_features/
-      version: x
-    - import-values:
+      version: 1.0.0
+    - alias: child2-alias
+      import-values:
       - child: default.data
         parent: myimports
       name: child2
       repository: https://ideaujetbrains.github.io/Helm_features/
-      version: x
+      version: 1.0.0
     description: my service
-    digest: 5ba5c91c16c78c9815b931a969cbb11a10797f3c1e41333897203607230fe61a
+    digest: 68328d0b29651ff3735cfe9910a9bfc1bd308fbef2d7bd31a7a7642aa71c7849
     keywords:
     - my
     - docker
@@ -82,11 +84,11 @@ entries:
       name: opavlova
     name: parent_chart
     urls:
-    - parent_chart-2.tgz
-    version: "2"
+    - parent_chart-2.1.1.tgz
+    version: 2.1.1
   subchart:
   - apiVersion: v2
-    created: "2019-10-01T10:58:02.4048522+02:00"
+    created: "2021-06-24T11:03:35.4303827+02:00"
     description: subchart
     digest: c80b743632f523660b12ae1d72f1741fe3520c10c0ddfc686af084809c095633
     keywords:
@@ -99,4 +101,4 @@ entries:
     urls:
     - subchart-1.1.1.tgz
     version: 1.1.1
-generated: "2019-10-01T10:58:02.3908374+02:00"
+generated: "2021-06-24T11:03:35.4223658+02:00"
